@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-x-hidden bg-dark scroll-smooth">
+  <div class="bg-dark scroll-smooth">
     <nav-bar />
     <profile-pic v-model="scrollY" />
     <div class="relative h-screen overflow-x-hidden scroll-smooth z-20" @scroll="handleScroll">

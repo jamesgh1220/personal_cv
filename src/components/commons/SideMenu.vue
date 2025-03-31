@@ -32,13 +32,13 @@
     </div>
   </div>
   <div
-    class="absolute top-[4rem] -right-56 bg-dark w-56 transition-all duration-300 z-100 lg:hidden"
+    class="absolute top-[4rem] -right-56 bg-dark w-56 transition-all duration-300 z-100"
     :class="{ 'block right-0': menuOpen }"
   >
-    <div class="flex flex-col p-3 my-2 font-plex text-light">
+    <div class="flex flex-col p-3 my-2 font-plex text-light font-light">
       <a
         class="w-full h-full py-4"
-        :class="{ 'text-blue': item.selected }"
+        :class="{ 'text-green font-semibold': item.selected }"
         v-for="item in menuItems"
         :key="item.id"
         :href="item.to"

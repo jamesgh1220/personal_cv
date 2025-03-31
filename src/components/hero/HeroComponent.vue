@@ -1,12 +1,9 @@
 <template>
-  <div class="flex flex-col justify-center text-light">
-    <!-- <div class="max-w-[90%] mx-auto">
-      <p class="text-2xl text-center font-medium">Desarrollador de software</p>
-    </div> -->
+  <div id="about" class="flex flex-col justify-center text-light scroll-mt-80">
     <div class="max-w-[90%] mx-auto my-8">
-      <p class="text-lg text-center font-light font-plex">
-        Hola, soy John James Gallego Hernandez
-        <span class="font-medium text-blue">Desarrollador de software.</span>
+      <p class="text-lg text-center font-normal font-plex">
+        Hola, soy John James Gallego Hernandez,
+        <span class="font-semibold text-green">Desarrollador de software.</span>
       </p>
     </div>
     <div class="max-w-[80%] mx-auto mb-10">

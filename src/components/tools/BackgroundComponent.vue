@@ -4,7 +4,7 @@
     :style="bubbleStyle(25, 5)"
   ></div>
   <div
-    class="absolute top w-32 h-32 bg-green rounded-full opacity-30 blur-2xl"
+    class="absolute top w-48 h-48 bg-blue rounded-full opacity-30 blur-2xl"
     :style="bubbleStyle(70, 30)"
   ></div>
 </template>

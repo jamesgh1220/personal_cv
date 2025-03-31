@@ -37,7 +37,7 @@ watch(
   transition: transform 0.5s ease-in-out;
 }
 .rotate-x-30 {
-  opacity: 0.4;
+  opacity: 0.2;
   transform: rotateX(-50deg) !important;
   transform-origin: bottom !important;
 }
