@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col w-screen mt-80">
+  <div class="relative flex flex-col mt-92">
     <HeroComponent />
     <WorkComponent />
     <ProjectsComponent id="portfolio" />

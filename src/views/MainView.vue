@@ -1,25 +1,39 @@
 <template>
-  <div class="bg-dark scroll-smooth">
+  <div>
     <nav-bar />
-    <profile-pic v-model="scrollY" />
-    <div class="relative h-screen overflow-x-hidden scroll-smooth z-20" @scroll="handleScroll">
+    <profile-pic v-model="activeClass" />
+    <div
+      ref="scrollContainer"
+      class="relative h-[calc(100vh-64px)] mt-[64px] overflow-y-auto scroll-smooth z-20"
+      @scroll="handleScroll"
+    >
       <home-view />
     </div>
   </div>
 
-  <background-component />
+  <background-component v-model="activeClass" />
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import HomeView from "./HomeView.vue";
-import NavBar from "../components/commons/NavBar.vue";
+import NavBar from "@/components/commons/NavBar.vue";
 import ProfilePic from "@/components/commons/ProfilePic.vue";
 import BackgroundComponent from "@/components/tools/BackgroundComponent.vue";
 
+const scrollContainer = ref(null);
 const scrollY = ref(0);
+const activeClass = ref(false);
 
-const handleScroll = (event) => {
-  scrollY.value = event.target.scrollTop; // Obtiene el scroll dentro del div
+const handleScroll = () => {
+  scrollY.value = scrollContainer.value?.scrollTop || 0;
 };
+
+watch(
+  scrollY,
+  (newVal) => {
+    activeClass.value = newVal > 50 ? true : false;
+  },
+  { immediate: true }
+);
 </script>

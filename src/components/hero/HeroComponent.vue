@@ -2,7 +2,7 @@
   <div id="about" class="flex flex-col justify-center text-light scroll-mt-80">
     <div class="max-w-[90%] mx-auto my-8">
       <p class="text-lg text-center font-normal font-plex">
-        Hola, soy John James Gallego Hernandez,
+        Hola, soy John James Gallego Hernández,
         <span class="font-semibold text-green">Desarrollador de software.</span>
       </p>
     </div>

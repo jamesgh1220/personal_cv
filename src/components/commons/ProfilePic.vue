@@ -1,7 +1,7 @@
 <template>
   <div
-    class="fixed top-[4rem] w-full h-fit z-10 pt-6 perspective-[400px] transition-all duration-500"
-    :class="{ '!top-[1rem]': activeClass }"
+    class="fixed top-[5rem] w-full h-fit py-6 perspective-[400px] transition-all duration-500 z-2"
+    :class="{ '!top-[3rem]': activeClass }"
   >
     <div
       class="w-40 h-44 pt-4 mx-auto bg-center bg-cover rounded transition-all duration-100 rotate-x-0"
@@ -15,18 +15,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
-
-const scrollY = defineModel();
-const activeClass = ref(false);
-
-watch(
-  scrollY,
-  (newVal) => {
-    activeClass.value = newVal > 50 ? true : false;
-  },
-  { immediate: true }
-);
+const activeClass = defineModel();
 </script>
 
 <style>
@@ -34,7 +23,7 @@ watch(
   opacity: 1;
   transform: rotateX(0deg);
   transform-origin: bottom;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .rotate-x-30 {
   opacity: 0.2;
