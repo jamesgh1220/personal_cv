@@ -2,7 +2,7 @@
   <div ref="sectionRef" class="relative w-full">
     <p
       :class="{ 'ml-4': isIntersecting }"
-      class="relative z-20 w-fit bg-blue p-2 rounded text-light transition-all duration-400"
+      class="relative z-20 w-fit bg-blue p-2 rounded text-light font-medium text-xl transition-all duration-300"
     >
       {{ title }}
     </p>

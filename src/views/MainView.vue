@@ -7,7 +7,7 @@
       class="relative h-[calc(100vh-64px)] mt-[64px] overflow-y-auto scroll-smooth z-20"
       @scroll="handleScroll"
     >
-      <home-view />
+      <content-view />
     </div>
   </div>
 
@@ -16,7 +16,7 @@
 
 <script setup>
 import { ref, watch } from "vue";
-import HomeView from "./HomeView.vue";
+import ContentView from "./ContentView.vue";
 import NavBar from "@/components/commons/NavBar.vue";
 import ProfilePic from "@/components/commons/ProfilePic.vue";
 import BackgroundComponent from "@/components/tools/BackgroundComponent.vue";

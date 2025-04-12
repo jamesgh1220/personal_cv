@@ -1,25 +1,23 @@
 <template>
-  <div id="about" class="flex flex-col justify-center text-light scroll-mt-80">
-    <div class="max-w-[90%] mx-auto my-8">
-      <p class="text-lg text-center font-normal font-plex">
-        Hola, soy John James Gallego Hernández,
-        <span class="font-semibold text-green">Desarrollador de software.</span>
+  <div id="about" class="flex flex-col justify-center text-light scroll-mt-80 mb-10">
+    <div class="max-w-[90%] mx-auto my-8 text-center">
+      <p class="text-2xl text-center font-plex">John James Gallego Hernández</p>
+      <p class="text-xl font-semibold text-green">Desarrollador full-stack</p>
+    </div>
+    <div class="max-w-[80%] mx-auto mb-14">
+      <p class="text-center text-base font-plex">
+        Hola, soy desarrollador web full-stack con 3 años de experiencia creando soluciones
+        digitales innovadoras que mezclen tecnología, diseño y funcionalidad. Me especializo en el
+        desarrollo de aplicaciones web, me apasiona convertir ideas complejas en interfaces
+        intuitivas y funcionales y me interesa aprender cosas nuevas, trabajar en equipo y siempre
+        buscar formas de mejorar lo que hago.
       </p>
     </div>
-    <div class="max-w-[80%] mx-auto mb-10">
-      <p class="text-center text-sm font-light font-plex">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam, ducimus corrupti
-        architecto doloribus vel quam nobis saepe, necessitatibus ab hic aperiam facere aliquam
-        quia. Eligendi eum esse quo. Nemo. Nisi reprehenderit debitis eligendi illo blanditiis
-        consectetur, optio, excepturi nobis dolores minima officia velit porro, numquam nulla quasi!
-        Reprehenderit velit itaque ni facere ipsum rerum sequi officia quaerat minima est laborum
-        voluptatibus quo.quia. Eligendi eum esse quo. Nemo. Nisi reprehenderit debitis eligendi illo
-        blanditiis consectetur, optio, excepturi nobis dolores minima officia velit porro, numquam
-        nulla quasi! Reprehenderit velit itaque ni facere ipsum rerum sequi officia quaerat minima
-        est laborum voluptatibus quo.
-      </p>
-    </div>
+    <button-component class="mx-auto" :label="'Descargar HV'" :icon="ArrowDownToLine" />
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import ButtonComponent from "@/components/commons/ButtonComponent.vue";
+import { ArrowDownToLine } from "lucide-vue-next";
+</script>
