@@ -33,11 +33,11 @@
   </div>
   <div
     class="absolute top-[4rem] -right-56 bg-dark w-56 transition-all duration-300 z-100"
-    :class="{ 'block right-0': menuOpen }"
+    :class="{ 'block right-0 !z-100': menuOpen }"
   >
     <div class="flex flex-col p-3 my-2 font-plex text-light font-light">
       <a
-        class="w-full h-full py-4"
+        class="w-full h-full py-4 ml-2"
         :class="{ 'text-green font-semibold': item.selected }"
         v-for="item in menuItems"
         :key="item.id"
@@ -47,7 +47,7 @@
         {{ item.label }}
       </a>
     </div>
-    <div class="flex justify-center items-center space-x-4 mt-4 pb-8 text-light">
+    <!-- <div class="flex justify-center items-center space-x-4 mt-4 pb-8 text-light">
       <div>
         <svg
           class="size-6"
@@ -73,7 +73,7 @@
       <div>
         <Github class="w-6 h-6 mr-1" />
       </div>
-    </div>
+    </div> -->
   </div>
   <div
     v-if="menuOpen"
@@ -84,8 +84,8 @@
 
 <script setup>
 import { ref } from "vue";
-import { Linkedin } from "lucide-vue-next";
-import { Github } from "lucide-vue-next";
+// import { Linkedin } from "lucide-vue-next";
+// import { Github } from "lucide-vue-next";
 
 const menuOpen = ref(false);
 
@@ -117,7 +117,6 @@ const menuItems = ref([
 ]);
 
 const handleItemMenu = (itemActive) => {
-  console.log(itemActive);
   menuItems.value.forEach((item) => {
     item.selected = false;
   });
