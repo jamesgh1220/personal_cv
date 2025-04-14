@@ -57,8 +57,6 @@
 
 <script setup>
 import { ref } from "vue";
-// import { Linkedin } from "lucide-vue-next";
-// import { Github } from "lucide-vue-next";
 
 const menuOpen = ref(false);
 

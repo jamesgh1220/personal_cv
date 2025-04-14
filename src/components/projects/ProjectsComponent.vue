@@ -1,13 +1,13 @@
 <template>
-  <div id="portfolio" class="scroll-mt-12 mb-10">
+  <div id="portfolio" class="mb-10">
     <title-component title="Proyectos" class="my-8" />
     <div class="text-light p-4">
       <div class="outline outline-sky-300 rounded-lg p-4">
         <h1 class="text-2xl font-bold text-blue">Chat</h1>
         <div class="aspect-video outline outline-blue rounded-lg my-2"></div>
         <div>
-          <h4 class="text-base font-bold">Descripcion:</h4>
-          <h4 class="text-base font-plex">Chat en tiempo real para los usuarios.</h4>
+          <h4 class="text-base font-bold">Descripción:</h4>
+          <h4 class="text-sm font-plex">Chat en tiempo real para los usuarios.</h4>
         </div>
         <div class="flex flex-wrap gap-1 mt-2 max-w-[90%]">
           <badge-component label="Vue.js" />

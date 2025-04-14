@@ -1,5 +1,5 @@
 <template>
-  <div id="worked" class="scroll-mt-12">
+  <div id="worked" class="mb-10">
     <title-component title="Experiencia laboral" class="my-8" />
     <div class="p-4 md:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">

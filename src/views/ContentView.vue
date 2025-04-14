@@ -5,6 +5,7 @@
     <WorkComponent />
     <StudyComponent />
     <StackComponent />
+    <FooterComponent />
   </div>
 </template>
 
@@ -14,4 +15,5 @@ import WorkComponent from "@/components/work/WorkComponent.vue";
 import ProjectsComponent from "@/components/projects/ProjectsComponent.vue";
 import StudyComponent from "@/components/info/InfoComponent.vue";
 import StackComponent from "@/components/stack/StackComponent.vue";
+import FooterComponent from "@/components/footer/FooterComponent.vue";
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="study" class="scroll-mt-12 mb-10">
+  <div id="study" class="mb-10">
     <title-component title="Formación académica" class="my-8" />
     <div class="p-4">
       <div class="bg-dark w-16 h-16 p-3 rounded-full mx-auto mb-4">
@@ -18,7 +18,7 @@
           </div>
           <div class="text-light">
             <h4 class="font-semibold text-base">Politécnico Colombiano Jaime Isaza Cadavid</h4>
-            <p class="font-light text-sm">Medellin, Antioquia</p>
+            <p class="font-light text-sm">Medellín, Antioquia</p>
           </div>
         </div>
         <div>

@@ -1,5 +1,5 @@
 <template>
-  <div id="stack" class="scroll-mt-12">
+  <div id="stack" class="mb-10">
     <title-component title="Habilidades técnicas" class="my-8" />
     <div class="p-4">
       <div class="grid grid-cols-2 place-items-center gap-3 mb-8">
