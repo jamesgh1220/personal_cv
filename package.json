@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "npx npm@latest i --prefer-dedupe --no-fund --no-audit",
+    "prebuild": "npm install",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
@@ -19,12 +19,11 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@vitejs/plugin-vue": "^5.2.1",
-    "eslint": "^9.21.0",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "eslint": "^9.24.0",
     "eslint-plugin-vue": "~10.0.0",
     "globals": "^16.0.0",
-    "vite": "^6.2.1",
+    "vite": "^6.2.6",
     "vite-plugin-vue-devtools": "^7.7.2"
   }
 }
