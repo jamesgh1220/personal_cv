@@ -1,11 +1,11 @@
 <template>
-  <div
-    class="fixed top-[64px] left-0 right-0 h-40 pointer-events-none transition-opacity duration-300 z-100"
+  <!-- <div
+    class="fixed top-[64px] left-0 right-0 h-40 pointer-events-none transition-opacity duration-300 z-50"
     :style="{
       background: 'linear-gradient(to bottom, #001427 5%, rgba(0,20,39,0.7) 40%, transparent 100%)',
     }"
     v-if="activeClass"
-  />
+  /> -->
 
   <div
     class="absolute w-48 h-48 bg-blue rounded-full opacity-40 blur-2xl"

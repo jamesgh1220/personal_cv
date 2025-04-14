@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio" class="scroll-mt-12">
+  <div id="portfolio" class="scroll-mt-12 mb-10">
     <title-component title="Proyectos" class="my-8" />
     <div class="text-light p-4">
       <div class="outline outline-sky-300 rounded-lg p-4">

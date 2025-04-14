@@ -1,7 +1,7 @@
 <template>
   <div id="worked" class="scroll-mt-12">
     <title-component title="Experiencia laboral" class="my-8" />
-    <div class="py-2 px-4 md:px-6 lg:px-8">
+    <div class="p-4 md:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto">
         <div class="relative">
           <!-- Línea vertical -->
@@ -17,7 +17,7 @@
                 class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10"
               >
                 <div
-                  class="w-12 h-12 rounded-full outline-2 outline-blue bg-dark shadow-lg flex items-center justify-center"
+                  class="w-12 h-12 rounded-full outline outline-blue bg-dark shadow-lg flex items-center justify-center"
                 >
                   <span class="text-sm font-medium text-light">{{ getYear(item.startDate) }}</span>
                 </div>
