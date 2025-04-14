@@ -10,11 +10,12 @@
       class="relative h-[calc(100vh-64px)] mt-[64px] overflow-y-auto scroll-smooth z-20"
       @scroll="handleScroll"
     >
-      <profile-pic class="custom-opacity" v-animate-on-scroll v-model="activeClass" />
-      <content-view />
+      <profile-pic v-model="activeClass" />
+      <content-view class="overflow-x-hidden" />
     </div>
   </div>
   <background-component v-model="activeClass" />
+  <scroll-up v-model:active="activeClass" v-model:container="scrollContainer" />
 </template>
 
 <script setup>
@@ -23,6 +24,7 @@ import ContentView from "./ContentView.vue";
 import NavBar from "@/components/commons/NavBar.vue";
 import ProfilePic from "@/components/commons/ProfilePic.vue";
 import BackgroundComponent from "@/components/tools/BackgroundComponent.vue";
+import ScrollUp from "@/components/tools/ScrollUp.vue";
 
 const scrollContainer = ref(null);
 const scrollY = ref(0);
