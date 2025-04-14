@@ -1,8 +1,8 @@
 <template>
   <div
-    class="fixed top-[64px] left-0 right-0 h-40 pointer-events-none z-30 transition-opacity duration-300"
+    class="fixed top-[64px] left-0 right-0 h-40 pointer-events-none transition-opacity duration-300 z-100"
     :style="{
-      background: 'linear-gradient(to bottom, #001427 20%, transparent 100%)',
+      background: 'linear-gradient(to bottom, #001427 5%, rgba(0,20,39,0.7) 40%, transparent 100%)',
     }"
     v-if="activeClass"
   />

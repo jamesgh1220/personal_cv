@@ -1,9 +1,9 @@
 <template>
-  <div class="relative flex flex-col mt-72">
+  <div class="relative flex flex-col">
     <HeroComponent />
-    <ProjectsComponent id="portfolio" />
+    <ProjectsComponent />
     <WorkComponent />
-    <StudyComponent id="study" />
+    <StudyComponent />
   </div>
 </template>
 

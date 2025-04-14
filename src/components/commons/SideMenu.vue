@@ -98,14 +98,14 @@ const menuItems = ref([
   },
   {
     id: 2,
-    to: "#worked",
-    label: "Experiencia laboral",
+    to: "#portfolio",
+    label: "Proyectos",
     selected: false,
   },
   {
     id: 3,
-    to: "#portfolio",
-    label: "Proyectos",
+    to: "#worked",
+    label: "Experiencia laboral",
     selected: false,
   },
   {

@@ -1,5 +1,5 @@
 <template>
-  <div id="worked" class="scroll-mt-16">
+  <div id="study" class="scroll-mt-12">
     <title-component title="Estudios" class="my-8" />
     <div class="text-light">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, corrupti. Asperiores
