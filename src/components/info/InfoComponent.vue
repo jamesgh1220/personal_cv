@@ -1,27 +1,38 @@
 <template>
-  <div id="study" class="scroll-mt-12">
-    <title-component title="Estudios" class="my-8" />
-    <div class="text-light">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, corrupti. Asperiores
-      quisquam dolorem qui fugit similique omnis, officia tenetur consequatur quia in odio! Placeat
-      iusto consequuntur accusantium tempora minima alias. Optio odio enim placeat dolore eos
-      numquam debitis architecto asperiores sunt sed aperiam rem quasi tempore dolorum ut commodi
-      nihil reiciendis delectus iste, ex provident dolorem. Reprehenderit incidunt modi quam?
-      Ducimus sequi reprehenderit a iure, tenetur ullam rerum minus corporis laborum harum culpa
-      cumque, quod delectus placeat asperiores amet ad recusandae, omnis nemo ipsam officiis
-      nostrum? Fuga totam architecto vel? Dignissimos sint quisquam cum eos minima! Tempore ex
-      asperiores commodi, nisi natus cumque consequuntur repellendus, voluptatibus reprehenderit
-      alias sed harum officiis obcaecati atque quasi quisquam cupiditate voluptates impedit ratione
-      ipsum. Aliquid quam dolor repudiandae sit nobis ratione, perferendis modi quas, nostrum
-      eligendi, dolorem magnam ut impedit. Aliquam, necessitatibus. Quae odio aspernatur, temporibus
-      rem illo obcaecati? Maxime nulla eligendi ratione asperiores? Quaerat maxime, nulla error
-      excepturi nesciunt, laborum iste repellat odit necessitatibus praesentium natus dolorum
-      aperiam accusamus laboriosam ratione distinctio sequi dicta sed fugit consectetur neque id?
-      Voluptate blanditiis libero animi. Fuga, placeat quas? Magni sint cupiditate in ipsum ipsa
+  <div id="study" class="scroll-mt-12 mb-10">
+    <title-component title="Formación académica" class="my-8" />
+    <div class="p-4">
+      <div class="bg-dark w-16 h-16 p-3 rounded-full mx-auto mb-4">
+        <GraduationCap class="h-full w-full text-blue" />
+      </div>
+      <div class="mb-4 text-center">
+        <p class="text-2xl text-blue font-bold">Ingeniería informática</p>
+        <badge-component label="2016-2022" class="mx-auto mt-2" />
+      </div>
+      <div class="px-4">
+        <div class="inline-flex mb-4">
+          <div class="flex-shrink-0 mr-3">
+            <div class="flex justify-center items-center bg-dark h-12 w-12 p-2 rounded-full">
+              <university class="h-full w-full text-blue" />
+            </div>
+          </div>
+          <div class="text-light">
+            <h4 class="font-semibold text-base">Politécnico Colombiano Jaime Isaza Cadavid</h4>
+            <p class="font-light text-sm">Medellin, Antioquia</p>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-lg text-blue">Proyecto de grado</h4>
+          <p class="text-light">Breve resumen proyecto de grado...</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import TitleComponent from "../commons/TitleComponent.vue";
+import TitleComponent from "@/components/commons/TitleComponent.vue";
+import BadgeComponent from "@/components/commons/BadgeComponent.vue";
+import { GraduationCap } from "lucide-vue-next";
+import { University } from "lucide-vue-next";
 </script>

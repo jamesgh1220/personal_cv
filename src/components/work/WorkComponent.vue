@@ -32,8 +32,8 @@
                   class="rounded-lg shadow-md border border-blue p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <div class="flex flex-col">
-                    <h3 class="text-xl font-bold text-light">{{ item.company }}</h3>
-                    <h4 class="text-base font-semibold text-blue mb-2">{{ item.role }}</h4>
+                    <h3 class="text-xl font-bold text-blue">{{ item.company }}</h3>
+                    <h4 class="text-base font-semibold text-light mb-2">{{ item.role }}</h4>
 
                     <badge-component
                       :label="`${formatDate(item.startDate)} - ${
@@ -41,7 +41,7 @@
                       }`"
                     />
 
-                    <div class="space-y-2 mb-1">
+                    <div class="space-y-2 mt-4 mb-1">
                       <ul class="space-y-2">
                         <li
                           v-for="(task, taskIndex) in item.tasks"
