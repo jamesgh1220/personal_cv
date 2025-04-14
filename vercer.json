@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "buildCommand": "./build.sh",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

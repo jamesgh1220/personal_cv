@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "npx npm@latest i --prefer-dedupe --no-fund --no-audit",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
