@@ -10,7 +10,7 @@
       class="relative h-[calc(100vh-64px)] mt-[64px] overflow-y-auto scroll-smooth z-20"
       @scroll="handleScroll"
     >
-      <profile-pic v-model="activeClass" />
+      <profile-pic class="custom-opacity" v-animate-on-scroll v-model="activeClass" />
       <content-view />
     </div>
   </div>

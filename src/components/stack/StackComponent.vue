@@ -4,7 +4,8 @@
     <div class="p-4">
       <div class="grid grid-cols-2 place-items-center gap-3 mb-8">
         <div
-          class="bg-dark p-2 w-24 rounded-md"
+          class="bg-dark p-2 w-24 rounded-md custom-opacity"
+          v-animate-on-scroll
           v-for="stack in strongStackExperience"
           :key="stack.id"
         >
@@ -20,6 +21,8 @@
       </div>
       <div class="flex flex-wrap gap-x-2">
         <badge-component
+          class="custom-opacity"
+          v-animate-on-scroll
           v-for="stack in othersStackExperience"
           :key="stack.id"
           :label="stack.text"

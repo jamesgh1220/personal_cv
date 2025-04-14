@@ -1,11 +1,15 @@
-import './assets/main.css'
+import "./assets/main.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-const app = createApp(App)
+import vAnimateOnScroll from "./directives/v-animate-on-scroll";
 
-app.use(router)
+const app = createApp(App);
 
-app.mount('#app')
+app.use(router);
+
+app.directive("animate-on-scroll", vAnimateOnScroll);
+
+app.mount("#app");

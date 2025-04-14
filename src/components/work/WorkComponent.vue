@@ -14,7 +14,8 @@
             <div class="relative flex items-start">
               <!-- Circulo de fecha -->
               <div
-                class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10"
+                class="absolute left-6 md:left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10 custom-opacity"
+                v-animate-on-scroll
               >
                 <div
                   class="w-12 h-12 rounded-full outline outline-blue bg-dark shadow-lg flex items-center justify-center"
@@ -29,9 +30,10 @@
                 :class="{ 'md:pl-12 md:pr-0 md:text-left md:ml-auto': index % 2 !== 0 }"
               >
                 <div
-                  class="rounded-lg shadow-md border border-blue p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                  class="rounded-lg shadow-md border border-blue p-4 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 custom-opacity"
+                  v-animate-on-scroll
                 >
-                  <div class="flex flex-col">
+                  <div class="flex flex-col custom-opacity" v-animate-on-scroll>
                     <h3 class="text-xl font-bold text-blue">{{ item.company }}</h3>
                     <h4 class="text-base font-semibold text-light mb-2">{{ item.role }}</h4>
 
@@ -42,7 +44,7 @@
                     />
 
                     <div class="space-y-2 mt-4 mb-1">
-                      <ul class="space-y-2">
+                      <ul class="space-y-2 custom-opacity" v-animate-on-scroll>
                         <li
                           v-for="(task, taskIndex) in item.tasks"
                           :key="taskIndex"

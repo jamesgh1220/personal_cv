@@ -1,7 +1,7 @@
 <template>
   <div id="portfolio" class="mb-10">
     <title-component title="Proyectos" class="my-8" />
-    <div class="text-light p-4">
+    <div class="text-light p-4 custom-opacity" v-animate-on-scroll>
       <div class="outline outline-sky-300 rounded-lg p-4">
         <h1 class="text-2xl font-bold text-blue">Chat</h1>
         <div class="aspect-video outline outline-blue rounded-lg my-2"></div>
@@ -14,7 +14,7 @@
           <badge-component label="Pinia.js" />
           <badge-component label="Firebase" />
         </div>
-        <div class="flex flex-wrap gap-2 mt-6">
+        <div class="flex flex-wrap gap-2 mt-6 custom-opacity" v-animate-on-scroll>
           <button-component :label="'GitHub'" :icon="Github" />
           <button-component :label="'Demo'" :icon="ExternalLink" />
         </div>
