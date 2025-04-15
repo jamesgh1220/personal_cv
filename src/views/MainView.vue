@@ -1,9 +1,9 @@
 <template>
   <div>
-    <nav-bar />
+    <nav-bar v-model="scrollToSection" />
     <div
       ref="scrollContainer"
-      class="relative h-[calc(100vh-64px)] mt-[64px] overflow-y-auto scroll-smooth z-20"
+      class="relative h-[calc(100vh-64px)] mt-[64px] z-20"
       @scroll="handleScroll"
       v-if="showContent"
     >
@@ -13,11 +13,11 @@
   </div>
   <loading-intro @show:content="showContent = true" />
   <background-component v-model="activeClass" />
-  <scroll-up v-model:active="activeClass" v-model:container="scrollContainer" />
+  <scroll-up v-if="activeClass" v-model="scrollContainer" />
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+import { onMounted, onUnmounted, ref, watch } from "vue";
 import ContentView from "./ContentView.vue";
 import NavBar from "@/components/commons/NavBar.vue";
 import ProfilePic from "@/components/commons/ProfilePic.vue";
@@ -26,19 +26,35 @@ import LoadingIntro from "@/components/tools/LoadingIntro.vue";
 import ScrollUp from "@/components/tools/ScrollUp.vue";
 
 const scrollContainer = ref(null);
-const scrollY = ref(0);
 const showContent = ref(false);
 const activeClass = ref(false);
+const scrollToSection = ref("");
 
 const handleScroll = () => {
-  scrollY.value = scrollContainer.value?.scrollTop || 0;
+  activeClass.value = window.scrollY > 50 ? true : false;
 };
 
-watch(
-  scrollY,
-  (newVal) => {
-    activeClass.value = newVal > 50 ? true : false;
-  },
-  { immediate: true }
-);
+watch(scrollToSection, (sectionId) => {
+  const targetElement = document.getElementById(sectionId);
+  if (!targetElement) return;
+
+  const navbar = document.querySelector("nav");
+  const navbarHeight = navbar ? navbar.offsetHeight : 64;
+
+  const elementPosition = targetElement.getBoundingClientRect().top;
+  let offsetPosition = elementPosition + window.scrollY - navbarHeight + 32;
+  offsetPosition = sectionId === "about" ? 0 : offsetPosition;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth",
+  });
+});
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 </script>

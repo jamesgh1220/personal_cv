@@ -8,11 +8,13 @@
         <p>Medellín, Colombia.</p>
       </div>
     </div>
-    <SideMenu />
+    <SideMenu v-model="scrollToSection" />
   </div>
 </template>
 
 <script setup>
 import SideMenu from "./SideMenu.vue";
 import { MapPin } from "lucide-vue-next";
+
+const scrollToSection = defineModel();
 </script>

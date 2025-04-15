@@ -6,7 +6,7 @@
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1"
+          stroke-width="2"
           stroke="currentColor"
           class="size-7 text-light"
         >
@@ -22,7 +22,7 @@
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1"
+          stroke-width="2"
           stroke="currentColor"
           class="size-7 text-light"
         >
@@ -32,16 +32,15 @@
     </div>
   </div>
   <div
-    class="absolute top-[4rem] -right-56 bg-dark w-56 transition-all duration-300 z-100"
-    :class="{ 'block right-0 !z-100': menuOpen }"
+    class="absolute top-[4rem] -right-56 bg-dark w-56 transition-all duration-300 z-100 md:w-72 md:-right-72 lg:w-96 lg:-right-96"
+    :class="{ 'block right-0 md:right-0 lg:right-0 !z-100': menuOpen }"
   >
-    <div class="flex flex-col p-3 my-2 font-plex text-light font-light">
+    <div class="flex flex-col p-3 my-2 font-plex text-light font-normal">
       <a
-        class="w-full h-full py-4 ml-2"
-        :class="{ 'text-green font-semibold': item.selected }"
+        class="w-full h-full py-4 ml-2 transition-all duration-300 md:ml-4 lg:hover:text-blue lg:hover:ml-8"
+        :class="{ 'text-blue font-semibold lg:ml-8': item.selected }"
         v-for="item in menuItems"
         :key="item.id"
-        :href="item.to"
         @click="handleItemMenu(item)"
       >
         {{ item.label }}
@@ -58,6 +57,7 @@
 <script setup>
 import { ref } from "vue";
 
+const scrollToSection = defineModel();
 const menuOpen = ref(false);
 
 const menuItems = ref([
@@ -94,6 +94,7 @@ const menuItems = ref([
 ]);
 
 const handleItemMenu = (itemActive) => {
+  scrollToSection.value = itemActive.to.replace("#", "");
   menuItems.value.forEach((item) => {
     item.selected = false;
   });

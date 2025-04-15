@@ -9,10 +9,10 @@
         <GraduationCap class="h-full w-full text-blue" />
       </div>
       <div class="mb-4 text-center custom-opacity" v-animate-on-scroll>
-        <p class="text-2xl text-blue font-bold">Ingeniería informática</p>
+        <p class="text-2xl text-blue font-bold lg:text-3xl">Ingeniería informática</p>
         <badge-component label="2016-2022" class="mx-auto mt-2" />
       </div>
-      <div class="px-4">
+      <div class="px-4 text-center">
         <div class="inline-flex mb-4 custom-opacity" v-animate-on-scroll>
           <div class="flex-shrink-0 mr-3">
             <div class="flex justify-center items-center bg-dark h-12 w-12 p-2 rounded-full">
@@ -20,12 +20,14 @@
             </div>
           </div>
           <div class="text-light">
-            <h4 class="font-semibold text-base">Politécnico Colombiano Jaime Isaza Cadavid</h4>
-            <p class="font-light text-sm">Medellín, Antioquia</p>
+            <h4 class="font-semibold text-base lg:text-lg">
+              Politécnico Colombiano Jaime Isaza Cadavid
+            </h4>
+            <p class="font-light text-sm text-start lg:text-base">Medellín, Antioquia</p>
           </div>
         </div>
         <div class="custom-opacity" v-animate-on-scroll>
-          <h4 class="font-bold text-lg text-blue">Proyecto de grado</h4>
+          <h4 class="font-bold text-lg text-blue lg:text-xl">Proyecto de grado</h4>
           <p class="text-light">Breve resumen proyecto de grado...</p>
         </div>
       </div>

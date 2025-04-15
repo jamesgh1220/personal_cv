@@ -20,7 +20,9 @@
                 <div
                   class="w-12 h-12 rounded-full outline outline-blue bg-dark shadow-lg flex items-center justify-center"
                 >
-                  <span class="text-sm font-medium text-light">{{ getYear(item.startDate) }}</span>
+                  <span class="text-sm font-medium text-light lg:text-base">{{
+                    getYear(item.startDate)
+                  }}</span>
                 </div>
               </div>
 
@@ -34,8 +36,12 @@
                   v-animate-on-scroll
                 >
                   <div class="flex flex-col custom-opacity" v-animate-on-scroll>
-                    <h3 class="text-xl font-bold text-blue">{{ item.company }}</h3>
-                    <h4 class="text-base font-semibold text-light mb-2">{{ item.role }}</h4>
+                    <h3 class="text-xl font-bold text-blue text-start lg:text-2xl">
+                      {{ item.company }}
+                    </h3>
+                    <h4 class="text-base font-semibold text-light mb-2 text-start lg:text-lg">
+                      {{ item.role }}
+                    </h4>
 
                     <badge-component
                       :label="`${formatDate(item.startDate)} - ${
@@ -53,7 +59,9 @@
                           <span
                             class="inline-block w-2 h-2 rounded-full bg-blue mt-1.5 mr-2 flex-shrink-0"
                           ></span>
-                          <span class="text-sm text-light">{{ task.text }}</span>
+                          <span class="text-sm text-light text-start lg:text-base">{{
+                            task.text
+                          }}</span>
                         </li>
                       </ul>
                     </div>

@@ -2,7 +2,7 @@
   <div id="stack" class="mb-10">
     <title-component title="Habilidades técnicas" class="my-8" />
     <div class="p-4">
-      <div class="grid grid-cols-2 place-items-center gap-3 mb-8">
+      <div class="grid grid-cols-2 sm:grid-cols-4 place-items-center gap-3 mb-8">
         <div
           class="bg-dark p-2 w-24 rounded-md custom-opacity"
           v-animate-on-scroll
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap gap-x-2">
+      <div class="flex flex-wrap gap-x-2 lg:justify-center">
         <badge-component
           class="custom-opacity"
           v-animate-on-scroll

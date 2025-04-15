@@ -1,8 +1,8 @@
 <template>
   <div ref="sectionRef" class="relative w-full">
     <p
-      :class="{ 'ml-4': isIntersecting }"
-      class="relative z-20 w-fit bg-blue p-2 rounded text-light font-medium text-lg transition-all duration-300"
+      :class="{ 'ml-4 lg:ml-12': isIntersecting }"
+      class="relative z-20 w-fit bg-blue p-2 rounded text-light font-medium text-lg transition-all duration-300 lg:text-xl"
     >
       {{ title }}
     </p>
