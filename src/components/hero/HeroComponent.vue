@@ -18,6 +18,7 @@
       v-animate-on-scroll
       :label="'Descargar HV'"
       :icon="ArrowDownToLine"
+      @click="downloadCv"
     />
   </div>
 </template>
@@ -25,4 +26,13 @@
 <script setup>
 import ButtonComponent from "@/components/commons/ButtonComponent.vue";
 import { ArrowDownToLine } from "lucide-vue-next";
+
+const downloadCv = () => {
+  const link = document.createElement("a");
+  link.href = "/assets/pdfs/HVJJGH.pdf";
+  link.download = "JohnJamesGallegoHernandezHV.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 </script>
