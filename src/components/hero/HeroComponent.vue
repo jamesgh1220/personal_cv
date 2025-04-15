@@ -29,7 +29,7 @@ import { ArrowDownToLine } from "lucide-vue-next";
 
 const downloadCv = () => {
   const link = document.createElement("a");
-  link.href = "/assets/pdfs/HVJJGH.pdf";
+  link.href = "/assets/hv/HVJJGH.pdf";
   link.download = "JohnJamesGallegoHernandezHV.pdf";
   document.body.appendChild(link);
   link.click();
