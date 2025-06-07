@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-green: #80ed99;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-green: #6ee7b7;
   --color-blue: #5aa9e6;
   --color-dark: #001427;
   --color-light: #f9f9f9;
@@ -9,11 +11,6 @@
 
 body {
   font-family: "Chakra Petch", sans-serif;
-  background-color: #001427 !important;
-}
-
-.font-plex {
-  font-family: "IBM Plex Mono", sans-serif;
 }
 
 .custom-opacity {

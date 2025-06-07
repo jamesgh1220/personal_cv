@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white min-h-fit">
     <nav-bar v-model="scrollToSection" />
     <div
       ref="scrollContainer"
@@ -7,13 +7,13 @@
       @scroll="handleScroll"
       v-if="showContent"
     >
-      <profile-pic class="animate-entrance" v-model="activeClass" />
+      <!-- <profile-pic class="animate-entrance" v-model="activeClass" /> -->
       <content-view class="overflow-x-hidden" />
     </div>
   </div>
-  <loading-intro @show:content="showContent = true" />
-  <background-component v-model="activeClass" />
-  <scroll-up v-if="activeClass" v-model="scrollContainer" />
+  <!-- <loading-intro @show:content="showContent = true" /> -->
+  <!-- <background-component v-model="activeClass" /> -->
+  <scroll-up v-if="activeClass" />
 </template>
 
 <script setup>
@@ -26,7 +26,7 @@ import LoadingIntro from "@/components/tools/LoadingIntro.vue";
 import ScrollUp from "@/components/tools/ScrollUp.vue";
 
 const scrollContainer = ref(null);
-const showContent = ref(false);
+const showContent = ref(true);
 const activeClass = ref(false);
 const scrollToSection = ref("");
 
