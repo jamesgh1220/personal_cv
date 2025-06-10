@@ -9,26 +9,29 @@
       alt="Profile picture"
     />
     <div class="max-w-[90%] mx-auto text-center custom-opacity" v-animate-on-scroll>
-      <p class="text-4xl font-bold text-center lg:text-3xl">John James Gallego Hernández</p>
+      <p class="text-3xl font-bold text-center lg:text-3xl">
+        John James <br />
+        Gallego Hernández
+      </p>
       <p
-        class="text-2xl font-bold text-white bg-emerald-300 -skew-2 mt-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.75)] lg:text-3xl"
+        class="text-xl font-bold text-white bg-emerald-300 -skew-2 mt-3 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.75)] lg:text-3xl"
       >
         Desarrollador fullstack
       </p>
     </div>
     <div class="max-w-[90%] mx-auto mb-16 mt-12">
-      <p class="text-center font-medium text-xl custom-opacity lg:text-base" v-animate-on-scroll>
+      <p class="text-center font-medium text-lg custom-opacity lg:text-base" v-animate-on-scroll>
         Desarrollador web fullstack con 3 años de experiencia creando aplicaciones digitales
         funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
         transformación de ideas complejas en interfaces claras.
       </p>
     </div>
     <div
-      class="sticky bottom-0 w-full scale-125 p-10 h-40 bg-no-repeat bg-cover"
+      class="sticky bottom-0 w-full scale-125 p-10 h-44 bg-no-repeat bg-cover"
       style="background-image: url('/bg-hero.svg')"
     ></div>
     <button-component
-      class="absolute bottom-16 left-1/2 -translate-x-1/2 custom-opacity z-10 !w-48"
+      class="absolute bottom-20 left-1/2 -translate-x-1/2 custom-opacity z-10 !w-48"
       v-animate-on-scroll
       :label="'Descargar HV'"
       :icon="ArrowDownToLine"
