@@ -1,5 +1,5 @@
 <template>
-  <div id="portfolio" class="mb-10 bg-[linear-gradient(to_bottom,_black_0%,_white_5%)]">
+  <section id="portfolio" class="mb-10 bg-[linear-gradient(to_bottom,_black_0%,_white_5%)]">
     <p
       v-animate-on-scroll
       class="relative mt-32 mb-16 w-fit mx-auto text-3xl font-bold before:absolute before:bottom-0 before:left-1/2 before:-translate-x-1/2 before:-mb-4 before:h-0.5 before:w-48 before:bg-black"
@@ -25,7 +25,7 @@
             <badge-component label="Pinia.js" />
             <badge-component label="Firebase" />
           </div>
-          <div class="flex flex-wrap gap-2 mt-6 custom-opacity">
+          <div class="flex flex-wrap gap-2 mt-6">
             <button-component :label="'GitHub'" :icon="Github" />
             <button-component :label="'Demo'" :icon="ExternalLink" />
           </div>
@@ -45,7 +45,7 @@
             <badge-component label="Pinia.js" />
             <badge-component label="Firebase" />
           </div>
-          <div class="flex flex-wrap gap-2 mt-6 custom-opacity" l>
+          <div class="flex flex-wrap gap-2 mt-6">
             <button-component :label="'GitHub'" :icon="Github" />
             <button-component :label="'Demo'" :icon="ExternalLink" />
           </div>
@@ -65,7 +65,7 @@
             <badge-component label="Pinia.js" />
             <badge-component label="Firebase" />
           </div>
-          <div class="flex flex-wrap gap-2 mt-6 custom-opacity">
+          <div class="flex flex-wrap gap-2 mt-6">
             <button-component :label="'GitHub'" :icon="Github" />
             <button-component :label="'Demo'" :icon="ExternalLink" />
           </div>
@@ -85,14 +85,14 @@
             <badge-component label="Pinia.js" />
             <badge-component label="Firebase" />
           </div>
-          <div class="flex flex-wrap gap-2 mt-6 custom-opacity">
+          <div class="flex flex-wrap gap-2 mt-6">
             <button-component :label="'GitHub'" :icon="Github" />
             <button-component :label="'Demo'" :icon="ExternalLink" />
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>

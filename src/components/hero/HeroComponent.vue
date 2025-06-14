@@ -1,5 +1,5 @@
 <template>
-  <div
+  <section
     id="about"
     class="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center text-black scroll-smooth overflow-hidden"
   >
@@ -27,16 +27,16 @@
       </p>
     </div>
     <div
-      class="sticky bottom-0 w-full scale-125 p-10 h-44 bg-no-repeat bg-cover"
-      style="background-image: url('/bg-hero.svg')"
-    ></div>
-    <button-component
-      class="absolute bottom-20 left-1/2 -translate-x-1/2 custom-opacity z-10 !w-48"
-      v-animate-on-scroll
-      :label="'Descargar HV'"
-      :icon="ArrowDownToLine"
-    />
-  </div>
+      class="flex justify-center items-center w-full scale-125 bg-black p-10 h-[calc(100vh-632px-6rem)] -skew-2"
+    >
+      <button-component
+        class="custom-opacity z-10 !w-48 !skew-2 !scale-[0.8]"
+        v-animate-on-scroll
+        :label="'Descargar HV'"
+        :icon="ArrowDownToLine"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -54,6 +54,10 @@ const downloadCv = () => {
 </script>
 
 <style scoped>
+#oval {
+  /* border-radius: 100px / 50px; */
+}
+
 .scrollbar-hidden {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
