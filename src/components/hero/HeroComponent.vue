@@ -42,7 +42,7 @@
           funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
           transformación de ideas complejas en interfaces claras.
         </p>
-        <div class="flex gap-4">
+        <div class="hidden lg:flex gap-4">
           <button-component class="z-10 !w-48" :label="'Descargar HV'" :icon="ArrowDownToLine" />
           <a @click="scrollToSection = 'portfolio'">
             <button-component class="z-10 !w-48" :label="'Mas sobre mi'" :icon="ArrowDownToLine" />
