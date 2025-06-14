@@ -5,7 +5,7 @@
         @click="scrollToTop"
         round
         icon="sym_o_arrow_upward"
-        class="h-12 w-12 opacity-80 rounded-full hover:opacity-100 transition-all duration-500 bg-blue cursor-pointer"
+        class="h-12 w-12 opacity-80 rounded-full hover:opacity-100 transition-all duration-500 bg-black ring-2 ring-white ring-inset cursor-pointer"
       >
         <ArrowUp class="mx-auto text-light" />
       </button>

@@ -5,7 +5,7 @@ export default {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.remove("custom-opacity");
-          el.classList.add("animate-entrance");
+          el.classList.add("fadeInUp");
           observer.unobserve(el);
         }
       },

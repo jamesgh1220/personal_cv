@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white min-h-fit">
+  <div class="bg-white min-h-fit" v-if="!isLoadingActive">
     <nav-bar v-model="scrollToSection" />
     <div
       ref="scrollContainer"
@@ -9,7 +9,7 @@
       <content-view class="overflow-x-hidden" />
     </div>
   </div>
-  <loading-intro />
+  <loading-intro v-model="isLoadingActive" v-if="isLoadingActive" />
   <scroll-up v-if="activeClass" />
 </template>
 
@@ -21,6 +21,7 @@ import LoadingIntro from "@/components/tools/LoadingIntro.vue";
 import ScrollUp from "@/components/tools/ScrollUp.vue";
 
 const scrollContainer = ref(null);
+const isLoadingActive = ref(true);
 const activeClass = ref(false);
 const scrollToSection = ref("");
 
