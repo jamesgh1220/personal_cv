@@ -57,7 +57,12 @@
           class="absolute -skew-2 scale-110 h-full bg-[linear-gradient(to_bottom,_#172e25_0%,_black_50%)] w-full -top-4 md:-top-8"
         ></div>
         <div class="flex justify-center items-center w-full">
-          <button-component class="z-10 !w-48" :label="'Descargar HV'" :icon="ArrowDownToLine" />
+          <button-component
+            class="z-10 !w-48"
+            :label="'Descargar HV'"
+            :icon="ArrowDownToLine"
+            @click="downloadCv"
+          />
         </div>
       </div>
     </div>
