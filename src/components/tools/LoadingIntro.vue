@@ -1,66 +1,73 @@
 <template>
   <div
     :class="customClass"
-    class="flex justify-center items-center bg-dark absolute top-0 z-100 h-screen w-full transition-all duration-1000"
+    class="flex justify-center items-center bg-black absolute top-0 z-100 h-screen w-full transition-all duration-[2s]"
   >
-    <p :class="customClassLabel" class="fadeIn custom-label text-light text-[4rem]">
-      {{ customLabel }}
-    </p>
+    <svg
+      class="svgCustom"
+      width="300"
+      height="300"
+      id="Layer_1"
+      data-name="Layer 1"
+      xmlns="http://w3.org/2000/svg"
+      viewBox="0 0 204 204"
+    >
+      <path
+        class="cls-1"
+        d="m2,102c0,82.11,17.89,100,100,100,82.11,0,100-17.89,100-100,0-82.11-17.89-100-100-100C19.89,2,2,19.89,2,102Z"
+      />
+    </svg>
+    <p class="textLoading">0</p>
   </div>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
+import { gsap } from "gsap";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 
-const emit = defineEmits(["show:content"]);
-
+gsap.registerPlugin(DrawSVGPlugin);
 const customClass = ref("");
-const customClassLabel = ref("fadeIn");
-const customLabel = ref("0%");
-
-const startLoading = () => {
-  const total = 100;
-  const duration = 5000;
-  const intervalTime = duration / total;
-  let current = 0;
-
-  const interval = setInterval(() => {
-    current++;
-    customLabel.value = `${current}%`;
-
-    if (current >= total) {
-      clearInterval(interval);
-      setTimeout(() => {
-        customClass.value = "!h-0 !opacity-0";
-        emit("show:content");
-      }, 500);
-    }
-  }, intervalTime);
-};
 
 onMounted(() => {
-  setTimeout(() => {
-    startLoading();
-  }, 500);
+  gsap.from(".cls-1", { duration: 1.5, drawSVG: 0, ease: "none" });
+
+  const obj = { v: 0 };
+
+  gsap.to(obj, {
+    v: 100,
+    duration: 1.5,
+    ease: "none",
+    onUpdate: function () {
+      document.getElementsByClassName("textLoading")[0].textContent = "%" + Math.round(obj.v);
+    },
+    onComplete: () => {
+      customClass.value = "!h-0 !opacity-0";
+    },
+  });
 });
 </script>
 
 <style>
-.custom-label::first-letter {
-  font-size: 6rem;
+.svgCustom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.cls-1 {
+  fill: none;
+  stroke: #4ade80;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
 }
-
-.fadeIn {
-  animation: fadeIn 1.5s ease forwards;
+.textLoading {
+  color: whitesmoke;
+  font-size: 4rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
 }
 </style>
