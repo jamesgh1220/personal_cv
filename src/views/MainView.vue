@@ -6,7 +6,7 @@
       class="relative h-[calc(100vh-64px)] mt-[64px] z-20"
       @scroll="handleScroll"
     >
-      <content-view class="overflow-x-hidden" />
+      <content-view v-model="scrollToSection" class="overflow-x-hidden" />
     </div>
   </div>
   <loading-intro v-model="isLoadingActive" v-if="isLoadingActive" />
@@ -43,6 +43,7 @@ watch(scrollToSection, (sectionId) => {
     top: offsetPosition,
     behavior: "smooth",
   });
+  scrollToSection.value = "";
 });
 
 onMounted(() => {
