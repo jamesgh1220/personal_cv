@@ -1,7 +1,7 @@
 <template>
   <div
     :class="customClass"
-    class="flex justify-center items-center bg-black absolute top-0 z-100 h-screen w-full transition-all duration-[2s]"
+    class="flex justify-center items-center bg-black absolute top-0 z-100 h-screen w-full"
   >
     <svg
       class="absolute left-1/2 top-1/2 -translate-1/2"

@@ -6,7 +6,7 @@
       class="relative h-[calc(100vh-64px)] mt-[64px] z-20"
       @scroll="handleScroll"
     >
-      <content-view v-model="scrollToSection" class="overflow-x-hidden" />
+      <content-view v-model="scrollToSection" />
     </div>
   </div>
   <loading-intro v-model="isLoadingActive" v-if="isLoadingActive" />
