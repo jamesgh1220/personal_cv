@@ -49,11 +49,6 @@
       </a>
     </div>
   </div>
-  <!-- <div
-    v-if="menuOpen"
-    class="fixed inset-0 top-[4rem] bg-[#00000059] transition-opacity duration-300 z-50"
-    @click="menuOpen = false"
-  ></div> -->
 </template>
 
 <script setup>
