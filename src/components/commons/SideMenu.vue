@@ -1,5 +1,5 @@
 <template>
-  <div class="absolute top-0 h-16 w-full z-0 lg:hidden">
+  <div class="fadeInUp absolute top-0 right-0 h-16 w-full z-0 lg:hidden">
     <div class="h-full float-end flex justify-end items-center w-fit px-4">
       <div class="hamburgers">
         <label class="hamburger">

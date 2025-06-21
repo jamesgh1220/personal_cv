@@ -1,0 +1,35 @@
+<template>
+  <div class="flex justify-center items-center gap-4 mt-4 fadeInUp">
+    <a
+      href="https://wa.me/+573133604722"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="WhatsApp"
+      v-animate-on-scroll
+    >
+      <MessageCircle class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+    </a>
+    <a
+      href="https://github.com/jamesgh1220"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="GitHub"
+      v-animate-on-scroll
+    >
+      <Github class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/john-james-gallego-hern%C3%A1ndez/"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Linkedin"
+      v-animate-on-scroll
+    >
+      <Linkedin class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+    </a>
+  </div>
+</template>
+
+<script setup>
+import { Linkedin, Github, MessageCircle } from "lucide-vue-next";
+</script>
