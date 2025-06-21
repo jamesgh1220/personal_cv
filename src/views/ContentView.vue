@@ -2,10 +2,10 @@
   <div class="relative flex flex-col">
     <HeroComponent v-model="scrollToSection" />
     <ProjectsComponent />
-    <WorkComponent />
+    <!-- <WorkComponent />
     <StudyComponent />
     <StackComponent />
-    <FooterComponent />
+    <FooterComponent /> -->
   </div>
 </template>
 

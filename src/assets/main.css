@@ -4,15 +4,20 @@
   --color-white: #fff;
   --color-black: #000;
   --color-green: #6ee7b7;
-  --color-blue: #5aa9e6;
-  --color-dark: #001427;
   --color-light: #f9f9f9;
+}
+
+@layer utilities {
+  .text-title {
+    /* @apply; */
+  }
 }
 
 body {
   font-family: "Chakra Petch", sans-serif;
 }
 
+/** TODO: ELIMINAR LO QUE NO SE NECESITE */
 .custom-opacity {
   opacity: 0;
 }

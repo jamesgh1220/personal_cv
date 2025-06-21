@@ -66,6 +66,15 @@
         </div>
       </div>
     </div>
+    <div class="hidden lg:block absolute bottom-0 w-full h-30 bg-black">
+      <div
+        class="relative h-full w-full before:bg-black before:w-full before:h-10 before:absolute before:-top-5 before:-skew-2"
+      >
+        <div
+          class="absolute -skew-2 scale-110 h-full bg-[linear-gradient(to_bottom,_#172e25_0%,_black_50%)] w-full -top-5"
+        ></div>
+      </div>
+    </div>
   </section>
 </template>
 

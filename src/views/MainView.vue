@@ -1,4 +1,12 @@
 <template>
+  <hero-page />
+</template>
+
+<script setup>
+import HeroPage from "@/components/hero/HeroPage.vue";
+</script>
+
+<!-- <template>
   <div class="bg-white min-h-fit" v-if="!isLoadingActive">
     <nav-bar v-model="scrollToSection" />
     <div
@@ -53,4 +61,4 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
-</script>
+</script> -->

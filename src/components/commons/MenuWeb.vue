@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center justify-center w-4/5 mt-4 mx-auto h-full">
-    <div
-      class="w-4/5 py-4 px-6 flex justify-center gap-4 text-black font-semibold text-lg rounded-lg bg-white/30 backdrop-blur-sm ring ring-inset ring-black"
-    >
+  <div
+    class="flex items-center justify-center w-full mx-auto h-full border-b-2 bg-white/30 backdrop-blur-sm"
+  >
+    <div class="py-4 px-6 flex justify-center gap-8 text-black font-semibold text-lg rounded-lg">
       <a
         class="w-fit h-full ml-2 transition-all duration-200 md:ml-4"
         :class="{ 'font-bold !ml-8 border-b-2 border-green lg:!ml-0': item.selected }"

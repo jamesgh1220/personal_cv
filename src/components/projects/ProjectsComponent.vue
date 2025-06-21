@@ -1,14 +1,11 @@
 <template>
-  <section
-    id="portfolio"
-    class="relative mb-10 bg-[linear-gradient(to_bottom,_black_0%,_white_5%)]"
-  >
+  <section id="portfolio" class="min-h-screen bg-[linear-gradient(to_bottom,_black_0%,_white_2%)]" ref="sectionContainer">
     <p
       id="scroll-title"
       v-animate-on-scroll
-      class="sticky top-16 flex flex-col pt-6 mt-28 w-full text-center text-3xl font-bold bg-white lg:pb-8 lg:mt-20 lg:overflow-hidden"
+      class="bg-white z-10 sticky top-16 flex flex-col pt-6 mt-28 w-full text-center text-3xl font-bold lg:pb-8 lg:mt-16 lg:overflow-hidden"
     >
-      <span class="lg:hidden">Projectos</span>
+      <span class="lg:hidden">Proyectos</span>
       <span class="line-1 w-full h-1 bg-black inline-block my-2 lg:!hidden"></span>
       <ul id="scroll-text" class="hidden lg:flex whitespace-nowrap will-change-transform">
         <li
@@ -21,137 +18,118 @@
         </li>
       </ul>
     </p>
-    <div id="content" class="text-light p-4 lg:px-12">
+    <div class="flex flex-col z-1 lg:flex-row">
+      <!-- Sticky sidebar a la izquierda -->
       <div
-        class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 min-lg:grid-cols-3 xl:grid-cols-4"
+        class="w-full lg:w-1/3 sticky top-36 lg:h-screen flex items-center justify-center bg-white border-r border-gray-200 z-10"
       >
-        <div class="outline outline-black rounded-lg p-4 custom-opacity" v-animate-on-scroll>
-          <h1 class="text-2xl font-bold text-black lg:text-3xl">Chat</h1>
-          <div class="aspect-video outline outline-black rounded-lg my-2"></div>
-          <div>
-            <h4 class="text-black text-base font-bold lg:text-lg">Descripción:</h4>
-            <h4 class="text-black text-sm font-plex lg:text-base">
-              Chat en tiempo real para los usuarios.
-            </h4>
-          </div>
-          <div class="flex flex-wrap gap-1 mt-2 max-w-[90%]">
-            <badge-component label="Vue.js" />
-            <badge-component label="Pinia.js" />
-            <badge-component label="Firebase" />
-          </div>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <button-component :label="'GitHub'" :icon="Github" />
-            <button-component :label="'Demo'" :icon="ExternalLink" />
-          </div>
+        <div class="text-center px-4">
+          <p class="text-2xl font-bold p-3 text-blue-600" v-text="activeStep"></p>
         </div>
+      </div>
 
-        <div class="outline outline-black rounded-lg p-4 custom-opacity" v-animate-on-scroll>
-          <h1 class="text-2xl font-bold text-black lg:text-3xl">Chat</h1>
-          <div class="aspect-video outline outline-black rounded-lg my-2"></div>
-          <div>
-            <h4 class="text-black text-base font-bold lg:text-lg">Descripción:</h4>
-            <h4 class="text-black text-sm font-plex lg:text-base">
-              Chat en tiempo real para los usuarios.
-            </h4>
-          </div>
-          <div class="flex flex-wrap gap-1 mt-2 max-w-[90%]">
-            <badge-component label="Vue.js" />
-            <badge-component label="Pinia.js" />
-            <badge-component label="Firebase" />
-          </div>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <button-component :label="'GitHub'" :icon="Github" />
-            <button-component :label="'Demo'" :icon="ExternalLink" />
-          </div>
-        </div>
-
-        <div class="outline outline-black rounded-lg p-4 custom-opacity" v-animate-on-scroll>
-          <h1 class="text-2xl font-bold text-black lg:text-3xl">Chat</h1>
-          <div class="aspect-video outline outline-black rounded-lg my-2"></div>
-          <div>
-            <h4 class="text-black text-base font-bold lg:text-lg">Descripción:</h4>
-            <h4 class="text-black text-sm font-plex lg:text-base">
-              Chat en tiempo real para los usuarios.
-            </h4>
-          </div>
-          <div class="flex flex-wrap gap-1 mt-2 max-w-[90%]">
-            <badge-component label="Vue.js" />
-            <badge-component label="Pinia.js" />
-            <badge-component label="Firebase" />
-          </div>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <button-component :label="'GitHub'" :icon="Github" />
-            <button-component :label="'Demo'" :icon="ExternalLink" />
-          </div>
-        </div>
-
-        <div class="outline outline-black rounded-lg p-4 custom-opacity" v-animate-on-scroll>
-          <h1 class="text-2xl font-bold text-black lg:text-3xl">Chat</h1>
-          <div class="aspect-video outline outline-black rounded-lg my-2"></div>
-          <div>
-            <h4 class="text-black text-base font-bold lg:text-lg">Descripción:</h4>
-            <h4 class="text-black text-sm font-plex lg:text-base">
-              Chat en tiempo real para los usuarios.
-            </h4>
-          </div>
-          <div class="flex flex-wrap gap-1 mt-2 max-w-[90%]">
-            <badge-component label="Vue.js" />
-            <badge-component label="Pinia.js" />
-            <badge-component label="Firebase" />
-          </div>
-          <div class="flex flex-wrap gap-2 mt-6">
-            <button-component :label="'GitHub'" :icon="Github" />
-            <button-component :label="'Demo'" :icon="ExternalLink" />
-          </div>
-        </div>
+      <!-- Steps a la derecha -->
+      <div class="w-full lg:w-2/3 p-8">
+        <section
+          v-for="(step, index) in steps"
+          :key="index"
+          class="mb-24 p-6 rounded-lg border border-gray-300 bg-white opacity-0"
+          :ref="(el) => (stepRefs[index] = el)"
+        >
+          <h2 class="text-2xl font-semibold mb-2">{{ step }}</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt, nunc eget.
+          </p>
+        </section>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import ButtonComponent from "@/components/commons/ButtonComponent.vue";
-import BadgeComponent from "@/components/commons/BadgeComponent.vue";
-import { Github } from "lucide-vue-next";
-import { ExternalLink } from "lucide-vue-next";
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { onMounted } from "vue";
+/* eslint-disable */
+import { ref, onMounted, nextTick } from "vue";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-const items = Array.from({ length: 15 });
+gsap.registerPlugin(ScrollTrigger);
+
+const steps = ["Paso 1", "Paso 2", "Paso 3", "Paso 4"];
+const activeStep = ref(steps[0]);
+const sectionContainer = ref(null);
+const stepRefs = [];
 
 onMounted(() => {
-  gsap.fromTo(
-    ".line-1",
-    { scaleX: 0 },
-    {
-      scaleX: 1,
+  nextTick(() => {
+    stepRefs.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top center",
+            end: "bottom center",
+            onEnter: () => (activeStep.value = steps[index]),
+            onEnterBack: () => (activeStep.value = steps[index]),
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    gsap.fromTo(
+      ".line-1",
+      { scaleX: 0 },
+      {
+        scaleX: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: "#portfolio",
+          scrub: true,
+          start: "top 90%", // comienza cuando #portfolio entra en la vista
+          end: "bottom 10%", // termina cuando casi sale por arriba
+        },
+      }
+    );
+
+    gsap.to("#scroll-text", {
+      xPercent: -100, // Mueve el texto a la izquierda
       ease: "none",
       scrollTrigger: {
         trigger: "#portfolio",
+        start: "top 90%",
+        end: "bottom 10%",
         scrub: true,
-        start: "top 90%", // comienza cuando #portfolio entra en la vista
-        end: "bottom 10%", // termina cuando casi sale por arriba
       },
-    }
-  );
-
-  gsap.to("#scroll-text", {
-    xPercent: -100, // Mueve el texto a la izquierda
-    ease: "none",
-    scrollTrigger: {
-      trigger: "#portfolio",
-      start: "top 90%",
-      end: "bottom 10%",
-      scrub: true,
-    },
+    });
   });
 });
 </script>
 
 <style scoped>
+[data-step] {
+  min-height: 150px;
+}
+
 .line {
   width: 100%;
   height: 4px;
