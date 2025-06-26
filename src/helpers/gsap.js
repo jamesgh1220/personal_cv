@@ -1,11 +1,24 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
 export function animationsGsap() {
+  const scrollToSection = (id) => {
+    const target = document.getElementById(id);
+    if (target) {
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: {
+          y: target,
+          offsetY: 0, // puedes ajustar el margen superior si tienes navbar fija
+        },
+        ease: "slow(0.8, 0.7, false)",
+      });
+    }
+  };
   /**
    * Este bloque inicializa y ejecuta una animación compleja con GSAP y ScrollTrigger
    * que simula la expansión de un círculo desde un carácter específico ("?")
@@ -27,8 +40,8 @@ export function animationsGsap() {
      * y sea lo suficientemente grande para cubrir toda la pantalla al escalarse.
      */
     gsap.set(dot, {
-      width: "142vmax", // Cubre el mayor tamaño posible entre alto y ancho del viewport
-      height: "142vmax",
+      width: "125vmax", // Cubre el mayor tamaño posible entre alto y ancho del viewport
+      height: "125vmax",
       xPercent: -50, // Centrado horizontal: traslada el 50% del ancho hacia la izquierda
       yPercent: -50, // Centrado vertical: traslada el 50% del alto hacia arriba
       top: "50%", // Ubica el centro del círculo verticalmente en el centro de la sección
@@ -47,13 +60,13 @@ export function animationsGsap() {
       scrollTrigger: {
         trigger: hero, // Elemento que activa el ScrollTrigger
         start: "top top", // Inicia cuando la parte superior del `hero` toca la parte superior del viewport
-        end: "bottom top", // Termina cuando la parte inferior del `hero` llega al tope del viewport
+        end: "+=75%", // Termina cuando la parte inferior del `hero` llega al tope del viewport
         scrub: 1.5, // Sincroniza el progreso de la animación con el desplazamiento (con retardo de 1.5s)
         pin: hero, // Fija la sección mientras se desarrolla la animación
         pinSpacing: true, // Mantiene espacio visual tras la sección fijada
         invalidateOnRefresh: true, // Recalcula coordenadas al redimensionar o refrescar la página
       },
-      defaults: { ease: "none" }, // Usar animación lineal por defecto en los pasos (sin interpolación)
+      defaults: { ease: "slow(0.8, 0.7, false)" }, // Usar animación lineal por defecto en los pasos (sin interpolación)
     });
 
     /**
@@ -86,21 +99,13 @@ export function animationsGsap() {
         {
           x: 0, // Termina centrado horizontalmente
           y: 0, // Termina centrado verticalmente
-          ease: "power3.in", // Usa aceleración suave al comienzo de la expansión
+          duration: 2.5,
+          ease: "slow(0.8, 0.7, false)",
           scale: 1, // Escala total: el punto ahora cubre toda la pantalla
         }
       )
-
-      /**
-       * 🔹 Paso 3: Mostrar contenido dentro del círculo
-       *
-       * Una vez que el `.dot` ha crecido, aparece el contenido secundario dentro de él.
-       * Esto simula una transición visual completa hacia otra "pantalla".
-       */
-      .to("#projects", {
-        opacity: 1, // Muestra el nuevo contenido (oculto inicialmente)
-        duration: 0.5, // Tiempo de aparición
-      }); // Pequeña pausa después del crecimiento total
+      // Revela el contenido de la "segunda sección" DENTRO del punto
+      .fromTo("#next-content", { opacity: 0 }, { opacity: 1 }, "+=0.3");
   };
 
   const splitText = async () => {
@@ -127,7 +132,8 @@ export function animationsGsap() {
   };
 
   return {
-    pointEntrance,
     splitText,
+    pointEntrance,
+    scrollToSection,
   };
 }

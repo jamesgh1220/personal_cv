@@ -1,19 +1,26 @@
 <template>
-  <section
-    id="hero"
-    class="relative h-screen flex flex-col gap-3 p-4 justify-center bg-black overflow-hidden"
-  >
-    <side-menu />
-    <personal-info-component />
-    <div class="flex justify-center gap-2 mt-6 fadeInUp">
-      <button-component :label="'Descargar HV'" :icon="ArrowDownToLine" @click="downloadCv" />
-      <button-component :label="'Mas sobre mi'" :icon="BookOpen" @click="downloadCv" />
-    </div>
-    <social-component />
-    <div class="dot bg-light w-0 h-0 rounded-[50%] absolute overflow-hidden">
+  <div class="relative">
+    <section
+      id="hero"
+      class="relative h-screen flex flex-col gap-3 p-4 justify-center bg-black overflow-hidden"
+    >
+      <side-menu />
+      <personal-info-component />
+      <div class="flex justify-center gap-2 mt-6 fadeInUp">
+        <button-component :label="'Descargar HV'" :icon="ArrowDownToLine" @click="downloadCv" />
+        <button-component
+          :label="'Mas sobre mi'"
+          :icon="BookOpen"
+          @click="scrollToSection('projects')"
+        />
+      </div>
+      <social-component />
+      <div class="dot flex flex-col bg-light w-0 h-0 rounded-[50%] overflow-hidden absolute"></div>
+    </section>
+    <div id="next-content" class="opacity-0 transition-opacity duration-500">
       <projects-page />
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -26,7 +33,7 @@ import { ArrowDownToLine, BookOpen } from "lucide-vue-next";
 import SocialComponent from "../social-media/SocialComponent.vue";
 import PersonalInfoComponent from "../personal-info/PersonalInfoComponent.vue";
 
-const { splitText, pointEntrance } = animationsGsap();
+const { splitText, pointEntrance, scrollToSection } = animationsGsap();
 
 onMounted(async () => {
   pointEntrance();
