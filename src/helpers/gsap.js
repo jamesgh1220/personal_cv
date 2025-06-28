@@ -40,8 +40,8 @@ export function animationsGsap() {
      * y sea lo suficientemente grande para cubrir toda la pantalla al escalarse.
      */
     gsap.set(dot, {
-      width: "125vmax", // Cubre el mayor tamaño posible entre alto y ancho del viewport
-      height: "125vmax",
+      width: "142vmax", // Cubre el mayor tamaño posible entre alto y ancho del viewport
+      height: "142vmax",
       xPercent: -50, // Centrado horizontal: traslada el 50% del ancho hacia la izquierda
       yPercent: -50, // Centrado vertical: traslada el 50% del alto hacia arriba
       top: "50%", // Ubica el centro del círculo verticalmente en el centro de la sección

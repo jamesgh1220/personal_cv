@@ -1,8 +1,10 @@
 <template>
+  <side-menu />
   <hero-page />
 </template>
 
 <script setup>
+import SideMenu from "@/components/commons/SideMenu.vue";
 import HeroPage from "@/components/hero/HeroPage.vue";
 </script>
 

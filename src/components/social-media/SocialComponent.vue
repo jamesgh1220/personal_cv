@@ -7,7 +7,9 @@
       title="WhatsApp"
       v-animate-on-scroll
     >
-      <MessageCircle class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+      <MessageCircle
+        class="size-8 sm:size-9 lg:size-8 text-light drop-shadow-lg drop-shadow-emerald-400"
+      />
     </a>
     <a
       href="https://github.com/jamesgh1220"
@@ -16,7 +18,9 @@
       title="GitHub"
       v-animate-on-scroll
     >
-      <Github class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+      <Github
+        class="size-8 sm:size-9 lg:size-8 text-light drop-shadow-lg drop-shadow-emerald-400"
+      />
     </a>
     <a
       href="https://www.linkedin.com/in/john-james-gallego-hern%C3%A1ndez/"
@@ -25,7 +29,9 @@
       title="Linkedin"
       v-animate-on-scroll
     >
-      <Linkedin class="text-light drop-shadow-lg drop-shadow-emerald-400" />
+      <Linkedin
+        class="size-8 sm:size-9 lg:size-8 text-light drop-shadow-lg drop-shadow-emerald-400"
+      />
     </a>
   </div>
 </template>

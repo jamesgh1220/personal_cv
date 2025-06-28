@@ -1,8 +1,8 @@
 <template>
-  <div class="fadeInUp absolute top-0 right-0 h-16 w-full z-0 lg:hidden">
+  <div class="fadeInUp fixed top-0 right-0 z-20 h-16 w-full overflow-hidden lg:hidden">
     <div class="h-full float-end flex justify-end items-center w-fit px-4">
       <div class="hamburgers">
-        <label class="hamburger">
+        <label class="hamburger z-20">
           <input type="checkbox" v-model="menuOpen" />
           <span class="bar"></span>
           <span class="bar"></span>
@@ -11,15 +11,84 @@
       </div>
     </div>
   </div>
-  <div v-if="menuOpen" class="text-white bg-red-300 h-40 w-full absolute left-0 top-16 !z-10">
-    a
-  </div>
+  <Transition name="slide-fade">
+    <div v-if="menuOpen" class="text-white bg-black h-screen w-full fixed left-0 top-0 !z-10">
+      <div class="full-h-menu-mobile">
+        <div
+          class="flex flex-col justify-center items-center gap-8 pt-8 text-light font-medium text-3xl"
+        >
+          <p
+            class="split w-fit h-full ml-2 transition-all duration-200 md:ml-4"
+            :class="{ 'font-bold border-b-2 border-green': item.selected }"
+            v-for="item in menuItems"
+            :key="item.id"
+            @click="goToSection(item)"
+          >
+            {{ item.label }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </Transition>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch, onUnmounted } from "vue";
+import { animationsGsap } from "@/helpers/gsap";
 
+const { splitText, scrollToSection } = animationsGsap();
 const menuOpen = ref(false);
+const menuItems = ref([
+  {
+    id: 1,
+    to: "#hero",
+    label: "Sobre mi",
+    selected: true,
+  },
+  {
+    id: 2,
+    to: "#projects",
+    label: "Proyectos",
+    selected: false,
+  },
+  {
+    id: 3,
+    to: "#worked",
+    label: "Trabajos",
+    selected: false,
+  },
+  {
+    id: 4,
+    to: "#study",
+    label: "Estudios",
+    selected: false,
+  },
+  {
+    id: 5,
+    to: "#stack",
+    label: "Habilidades",
+    selected: false,
+  },
+]);
+
+const goToSection = (section) => {
+  menuItems.value.forEach((item) => {
+    item.selected = false;
+  });
+  section.selected = true;
+  scrollToSection(section.to.replace("#", ""));
+  menuOpen.value = false;
+};
+watch(menuOpen, (val) => {
+  document.body.style.overflow = val ? "hidden" : "";
+  if (val) {
+    splitText();
+  }
+});
+
+onUnmounted(() => {
+  document.body.style.overflow = "";
+});
 </script>
 
 <style>
@@ -64,6 +133,22 @@ const menuOpen = ref(false);
 
 .hamburger input:checked ~ .bar:nth-child(4) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+.slide-fade-enter-active {
+  transition: all 0.4s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
+  height: 100vh;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(-20px);
+  opacity: 0;
+  height: 0px;
 }
 </style>
 

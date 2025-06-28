@@ -11,6 +11,10 @@
   .text-title {
     /* @apply; */
   }
+
+  .full-h-menu-mobile {
+    @apply h-[calc(100vh-4rem)] mt-16;
+  }
 }
 
 body {
