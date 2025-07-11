@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "npm install",
+    "prebuild": "pnpm install",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
