@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-center items-center gap-4 mt-4 fadeInUp">
     <a
+      class="lg:-skew-x-[20deg] lg:hover:-translate-1 lg:hover:!skew-x-0 lg:transition-all lg:duration-200"
       href="https://wa.me/+573133604722"
       target="_blank"
       rel="noopener noreferrer"
@@ -12,6 +13,7 @@
       />
     </a>
     <a
+      class="lg:-skew-x-[20deg] lg:hover:-translate-1 lg:hover:!skew-x-0 lg:transition-all lg:duration-200"
       href="https://github.com/jamesgh1220"
       target="_blank"
       rel="noopener noreferrer"
@@ -23,6 +25,7 @@
       />
     </a>
     <a
+      class="lg:-skew-x-[20deg] lg:hover:-translate-1 lg:hover:!skew-x-0 lg:transition-all lg:duration-200"
       href="https://www.linkedin.com/in/john-james-gallego-hern%C3%A1ndez/"
       target="_blank"
       rel="noopener noreferrer"
