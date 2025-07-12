@@ -10,7 +10,6 @@
       >
         <personal-info-component />
       </div>
-      <!-- <div class="flex flex-wrap justify-center gap-3 fadeInUp"> -->
       <div
         class="fadeInUp flex flex-col gap-5 sm:gap-10 lg:flex-1 lg:justify-center lg:items-center lg:h-full lg:gap-12"
       >
@@ -22,10 +21,10 @@
             >10+<br /><span class="text-base font-medium xl:text-xl">Proyectos</span></label
           >
         </div>
-        <div class="hidden lg:block">
+        <div>
           <social-component />
         </div>
-        <div class="lg:flex lg:w-full lg:justify-center lg:items-center lg:gap-4 lg:px-4">
+        <div class="lg:flex lg:w-full lg:justify-center lg:items-center lg:gap-4 lg:px-4 xl:gap-6">
           <button-component
             class="hidden lg:flex"
             :label="'Descargar HV'"
@@ -39,12 +38,13 @@
             @click="scrollToSection('projects')"
           />
         </div>
-        <!-- </div> -->
-        <div class="block lg:hidden">
-          <social-component />
-        </div>
       </div>
       <div class="dot flex flex-col bg-light w-0 h-0 rounded-[50%] overflow-hidden absolute"></div>
+      <div class="absolute blur-3xl -bottom-40 w-80 h-80 bg-[#3a7a61] rounded-full -left-40"></div>
+      <div class="hidden lg:!block group">
+        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-20 lg:right-20 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-24 group-hover:right-24"></div>
+        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-24 lg:right-24 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-20 group-hover:right-20"></div>
+      </div>
     </section>
     <div id="next-content" class="opacity-0 transition-opacity duration-500">
       <projects-page />
