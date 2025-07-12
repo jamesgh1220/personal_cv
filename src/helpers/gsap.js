@@ -131,9 +131,28 @@ export function animationsGsap() {
     tween.timeScale(0.5).play(0);
   };
 
+  const projectsSection = ({elements, element, activeElement, posElement}) => {
+    gsap.fromTo(
+      element,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top center",
+          end: "bottom center",
+          onEnter: () => (activeElement.value = elements[posElement]),
+          onEnterBack: () => (activeElement.value = elements[posElement]),
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  };
+
   return {
     splitText,
     pointEntrance,
     scrollToSection,
+    projectsSection,
   };
 }

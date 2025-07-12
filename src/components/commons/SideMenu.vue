@@ -18,7 +18,7 @@
           class="flex flex-col justify-center items-center gap-8 pt-8 text-light font-medium text-3xl"
         >
           <p
-            class="split w-fit h-full ml-2 transition-all duration-200 md:ml-4"
+            class="w-fit h-full ml-2 transition-all duration-200 md:ml-4"
             :class="{ 'font-bold border-b-2 border-green': item.selected }"
             v-for="item in menuItems"
             :key="item.id"

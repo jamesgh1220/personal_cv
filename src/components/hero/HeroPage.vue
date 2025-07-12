@@ -1,5 +1,4 @@
 <template>
-  <!-- <side-menu /> -->
   <div class="relative">
     <section
       id="hero"
@@ -25,12 +24,12 @@
           <social-component />
         </div>
         <div class="lg:flex lg:w-full lg:justify-center lg:items-center lg:gap-4 lg:px-4 xl:gap-6">
-          <button-component
+          <!-- <button-component
             class="hidden lg:flex"
             :label="'Descargar HV'"
             :icon="ArrowDownToLine"
             @click="downloadCv"
-          />
+          /> -->
           <button-component
             class="mx-auto lg:mx-0"
             :label="'Mas sobre mi'"
@@ -39,16 +38,16 @@
           />
         </div>
       </div>
-      <div class="dot flex flex-col bg-light w-0 h-0 rounded-[50%] overflow-hidden absolute z-1"></div>
+      <div class="dot flex flex-col bg-white w-0 h-0 rounded-[50%] !overflow-hidden absolute z-1"></div>
       <div class="absolute blur-3xl -bottom-40 w-80 h-80 bg-[#3a7a61] rounded-full -left-40"></div>
       <div class="hidden lg:!block group">
         <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-20 lg:right-20 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-24 group-hover:right-24"></div>
         <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-24 lg:right-24 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-20 group-hover:right-20"></div>
       </div>
     </section>
-    <div id="next-content" class="opacity-0 transition-opacity duration-500">
+    <section id="next-content" class="bg-light opacity-0 transition-opacity duration-500">
       <projects-page />
-    </div>
+    </section>
   </div>
 </template>
 
@@ -57,7 +56,6 @@ import { onMounted } from "vue";
 import ProjectsPage from "../projects/ProjectsPage.vue";
 import ButtonComponent from "@/components/commons/ButtonComponent.vue";
 import { animationsGsap } from "@/helpers/gsap";
-// import SideMenu from "../commons/SideMenu.vue";
 import { ArrowDownToLine, BookOpen } from "lucide-vue-next";
 import SocialComponent from "../social-media/SocialComponent.vue";
 import PersonalInfoComponent from "../personal-info/PersonalInfoComponent.vue";

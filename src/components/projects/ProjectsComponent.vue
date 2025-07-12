@@ -33,7 +33,7 @@
         <section
           v-for="(step, index) in steps"
           :key="index"
-          class="mb-24 p-6 rounded-lg border border-gray-300 bg-white opacity-0"
+          class="mb-24 p-6 rounded-lg border border-gray-300"
           :ref="(el) => (stepRefs[index] = el)"
         >
           <h2 class="text-2xl font-semibold mb-2">{{ step }}</h2>
