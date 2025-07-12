@@ -6,24 +6,24 @@
       class="relative h-screen flex flex-col lg:flex-row gap-5 sm:gap-10 p-6 sm:p-10 md:p-12 lg:p-16 justify-center bg-black overflow-hidden lg:items-center"
     >
       <div
-        class="flex flex-col gap-5 sm:gap-10 lg:gap-4 lg:flex-1 lg:justify-center lg:items-start"
+        class="flex flex-col gap-8 sm:gap-10 lg:gap-8 lg:flex-1 lg:justify-center lg:items-start xl:gap-10"
       >
         <personal-info-component />
-        <div class="hidden lg:block">
-          <social-component />
-        </div>
       </div>
       <!-- <div class="flex flex-wrap justify-center gap-3 fadeInUp"> -->
       <div
-        class="fadeInUp flex flex-col gap-5 sm:gap-10 lg:flex-1 lg:justify-center lg:items-center lg:h-full lg:gap-20"
+        class="fadeInUp flex flex-col gap-5 sm:gap-10 lg:flex-1 lg:justify-center lg:items-center lg:h-full lg:gap-12"
       >
-        <div class="hidden lg:flex">
-          <label class="font-bold text-light border-r flex flex-col px-2 text-6xl text-center"
-            >3+<br /><span class="text-base font-medium">años de<br />experiencia</span></label
+        <div class="hidden lg:flex lg:-skew-x-[20deg]">
+          <label class="drop-shadow-lg drop-shadow-emerald-400 font-bold text-light border-r flex flex-col px-2 text-6xl text-center xl:text-8xl"
+            >3+<br /><span class="text-base font-medium xl:text-xl">años de<br />experiencia</span></label
           >
-          <label class="font-bold pt-16 text-light flex flex-col px-2 text-6xl text-center"
-            >10+<br /><span class="text-base font-medium">Proyectos</span></label
+          <label class="drop-shadow-lg drop-shadow-emerald-400 font-bold pt-16 text-light flex flex-col px-2 text-6xl text-center xl:text-8xl"
+            >10+<br /><span class="text-base font-medium xl:text-xl">Proyectos</span></label
           >
+        </div>
+        <div class="hidden lg:block">
+          <social-component />
         </div>
         <div class="lg:flex lg:w-full lg:justify-center lg:items-center lg:gap-4 lg:px-4">
           <button-component
