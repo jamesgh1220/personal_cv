@@ -134,9 +134,8 @@ export function animationsGsap() {
   const projectsSection = ({elements, element, activeElement, posElement}) => {
     gsap.fromTo(
       element,
-      { opacity: 0 },
+      {},
       {
-        opacity: 1,
         scrollTrigger: {
           trigger: element,
           start: "top center",
