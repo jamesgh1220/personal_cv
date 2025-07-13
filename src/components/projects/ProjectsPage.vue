@@ -6,21 +6,11 @@
           <div class="flex flex-col z-1 h-full lg:flex-row">
             <left-content v-model:active-scroll="activeProject" v-model:active-mouse="mouseActiveProject" />
             <div class="w-full lg:w-2/3 lg:flex lg:flex-col lg:justify-evenly lg:mt-16">
-              <section
-                v-for="(project, index) in PROJECTS"
-                :key="index"
-                class="fadeInUp group p-4 mt-10 border-b border-gray-300 lg:w-4/5 lg:mx-auto lg:transition-all lg:duration-700 lg:mt-0 lg:min-h-28"
-                :ref="(el) => (projectsRef[index] = el)"
-                @mouseover="handleActiveProjectMouse(project)"
-              >
-                <span class="split text-2xl font-semibold mb-2 lg:relative lg:flex lg:items-center lg:gap-2 lg:transition-all lg:group-hover:duration-500 lg:group-hover:ml-4">
-                  <span class="hidden lg:block">{{ project?.id }}. </span>
-                  {{ project?.name }}
-                  <ArrowDownLeft class="hidden lg:block lg:absolute lg:h-full lg:right-0 lg:top-0 lg:transition-all lg:group-hover:text-green lg:group-hover:-rotate-[45deg] lg:size-7" />
-                </span>
-                <img class="aspect-video bg-light rounded-lg lg:hidden" :src="project.image || ''" alt="project image" />
-                <p class="pt-4 lg:opacity-0 lg:h-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:opacity-100 group-hover:h-24 lg:duration-300">{{ project.description }}</p>
-              </section>
+              <template :key="index" v-for="(project, index) in PROJECTS">
+                <div :ref="(el) => (projectsRef[index] = el)" @mouseover="handleActiveProjectMouse(project)">
+                  <project-content :project="project" />
+                </div>
+              </template>
             </div>
           </div>
         </div>
@@ -33,42 +23,39 @@
 <script setup>
 /* eslint-disable */
 import { ref, onMounted, nextTick } from "vue";
-import gsap from "gsap";
-import { ArrowDownLeft } from 'lucide-vue-next';
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { animationsGsap } from "@/helpers/gsap";
 import LeftContent from "./LeftContent.vue";
+import ProjectContent from "./ProjectContent.vue";
 
 const { projectsSection } = animationsGsap();
-gsap.registerPlugin(ScrollTrigger);
 const PROJECTS = [
   {
     id: 1,
     name: 'Mobile ionic angular',
     image: 'https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
-    tecnologies: [],
+    technologies: ['Ionic', 'Angular'],
   },
   {
     id: 2,
     name: 'Login rrss y chat firebase',
     image: 'https://images.unsplash.com/photo-1594568284297-7c64464062b1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
-    tecnologies: [],
+    technologies: ['Vue', 'Firebase', 'Tailwind'],
   },
   {
     id: 3,
     name: 'todo react',
     image: 'https://images.unsplash.com/photo-1558637845-c8b7ead71a3e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
-    tecnologies: [],
+    technologies: ['React', 'Tailwind'],
   },
   {
     id: 4,
     name: 'Repositorio',
     image: 'https://images.unsplash.com/photo-1626593261859-4fe4865d8cb1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
-    tecnologies: [],
+    technologies: [],
   },
 ];
 const activeProject = ref(PROJECTS[0]);

@@ -30,7 +30,7 @@
             :icon="ArrowDownToLine"
             @click="downloadCv"
           /> -->
-          <button-component
+          <button-black
             class="mx-auto lg:mx-0"
             :label="'Mas sobre mi'"
             :icon="BookOpen"
@@ -54,7 +54,7 @@
 <script setup>
 import { onMounted } from "vue";
 import ProjectsPage from "../projects/ProjectsPage.vue";
-import ButtonComponent from "@/components/commons/ButtonComponent.vue";
+import ButtonBlack from "@/components/commons/ButtonBlack.vue";
 import { animationsGsap } from "@/helpers/gsap";
 import { ArrowDownToLine, BookOpen } from "lucide-vue-next";
 import SocialComponent from "../social-media/SocialComponent.vue";
