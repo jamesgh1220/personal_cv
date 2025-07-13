@@ -3,7 +3,7 @@
     class="w-full sticky top-0 flex flex-col items-center justify-center bg-white z-1 lg:w-1/3 lg:h-screen"
   >
     <p
-    class="text-7xl pt-10 text-transparent bg-clip-text bg-gradient-to-b from-slate-300 to-slate-50 font-black text-start lg:absolute lg:left-0 lg:top-0"
+    class="text-7xl pt-10 text-transparent bg-clip-text bg-gradient-to-b from-slate-300 to-white font-black text-start lg:absolute lg:left-0 lg:top-0"
     >
       Proyectos
     </p>

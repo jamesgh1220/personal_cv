@@ -10,11 +10,11 @@
 		<img class="aspect-video bg-light rounded-lg mt-4 lg:hidden" :src="project.image || ''" alt="project image" />
 		<p class="py-4 font-normal lg:opacity-0 lg:h-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:opacity-100 lg:group-hover:h-24 lg:duration-300">{{ project.description }}</p>
 		<template v-for="(tech, index) in project.technologies" :key="index">
-			<span class="inline-flex flex-wrap text-black text-base font-semibold lg:opacity-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:opacity-100 lg:h-0 lg:group-hover:h-fit">
+			<span class="inline-flex flex-wrap text-black text-base font-semibold lg:opacity-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:opacity-100 lg:!h-0 lg:group-hover:!h-fit">
 				{{ tech }} <span v-show="(index + 1) !== project?.technologies?.length" class="mx-1">></span>
 			</span>
 		</template>
-		<button-white class="my-4 lg:opacity-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:opacity-100" :label="'Ver proyecto'" :icon="Code" />
+		<button-white class="my-4 lg:h-0 lg:opacity-0 lg:transition-all lg:group-hover:duration-500 lg:group-hover:h-fit lg:group-hover:opacity-100" :label="'Ver proyecto'" :icon="Code" />
 	</section>
 </template>
 
