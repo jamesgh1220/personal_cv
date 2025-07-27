@@ -3,6 +3,7 @@
 		class="fadeInUp group mb-10 border-b border-gray-300 lg:w-4/5 lg:mx-auto lg:transition-all lg:duration-700 lg:mt-0 lg:min-h-28"
 	>
 		<span class="split text-2xl font-semibold mb-2 lg:relative lg:flex lg:items-center lg:gap-2 lg:transition-all lg:group-hover:duration-500 lg:group-hover:ml-4">
+			<span class="hidden lg:block lg:w-0 lg:h-0 lg:bg-green lg:rounded-full lg:mr-1 lg:group-hover:w-2 lg:group-hover:h-2"></span>
 			<span class="hidden lg:block">{{ project?.id }}. </span>
 			{{ project?.name }}
 			<ArrowDownLeft class="hidden lg:block lg:absolute lg:h-full lg:right-0 lg:top-0 lg:transition-all lg:group-hover:text-green lg:group-hover:-rotate-[45deg] lg:size-7" />

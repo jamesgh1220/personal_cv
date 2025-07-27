@@ -41,8 +41,8 @@
       <div class="dot flex flex-col bg-white w-0 h-0 rounded-[50%] !overflow-hidden absolute z-1"></div>
       <div class="absolute blur-3xl -bottom-40 w-80 h-80 bg-[#3a7a61] rounded-full -left-40"></div>
       <div class="hidden lg:!block group">
-        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-20 lg:right-20 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-24 group-hover:right-24"></div>
-        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-24 lg:right-24 lg:rounded-4xl border border-green -skew-[4deg] group-hover:top-20 group-hover:right-20"></div>
+        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-20 lg:right-20 lg:rounded-4xl border-2 border-green -skew-[4deg] group-hover:top-24 group-hover:right-24"></div>
+        <div class="transition-all duration-300 lg:absolute lg:h-32 lg:w-32 lg:top-24 lg:right-24 lg:rounded-4xl border-2 border-green -skew-[4deg] group-hover:top-20 group-hover:right-20"></div>
       </div>
     </section>
     <section id="next-content" class="bg-light opacity-0 transition-opacity duration-500">
