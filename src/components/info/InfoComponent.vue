@@ -15,11 +15,11 @@
         </div>
         <div class="space-y-1 mb-4 custom-opacity text-light text-start" v-animate-on-scroll>
           <p class="text-2xl font-bold drop-shadow-lg drop-shadow-emerald-400 lg:text-3xl">Ingeniero informático</p>
-          <p class="font-semibold text-lg drop-shadow-lg drop-shadow-emerald-400 lg:text-lg">
+          <p class="font-semibold text-lg lg:text-lg">
             Politécnico Colombiano Jaime Isaza Cadavid
           </p>
-          <p class="text-base drop-shadow-lg drop-shadow-emerald-400 lg:text-base">Medellín, Antioquia</p>
-          <p class="drop-shadow-lg drop-shadow-emerald-400">2016-2022</p>
+          <p class="text-base lg:text-base">Medellín, Antioquia</p>
+          <p>2016-2022</p>
         </div>
       </div>
     </div>
@@ -31,6 +31,5 @@
 
 <script setup>
 import { GraduationCap } from "lucide-vue-next";
-import { University } from "lucide-vue-next";
 import StackComponent from "../stack/StackComponent.vue";
 </script>
