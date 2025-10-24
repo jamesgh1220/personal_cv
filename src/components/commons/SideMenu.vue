@@ -1,6 +1,6 @@
 <template>
-  <div class="fadeInUp fixed top-0 right-0 z-20 h-16 w-full overflow-hidden lg:hidden">
-    <div class="h-full float-end flex justify-end items-center w-fit px-4">
+  <div class="fadeInUp flex justify-between items-center gap-5 w-full lg:hidden">
+    <div class="">
       <div class="hamburgers">
         <label class="hamburger z-20">
           <input type="checkbox" v-model="menuOpen" />
@@ -10,15 +10,16 @@
         </label>
       </div>
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
   </div>
-  <Transition name="slide-fade">
-    <div v-if="menuOpen" class="text-white bg-black h-screen w-full fixed left-0 top-0 !z-10">
+  <Transition name="fade">
+    <div v-if="menuOpen" class="text-white menu-mobile h-screen w-full fixed left-0 top-0 !z-10">
       <div class="full-h-menu-mobile">
         <div
-          class="flex flex-col justify-center items-center gap-8 pt-8 text-light font-medium text-3xl"
+          class="flex flex-col justify-center items-center gap-8 pt-8 text-black font-medium text-3xl"
         >
           <p
-            class="w-fit h-full ml-2 transition-all duration-200 md:ml-4"
+            class="max-w-44 h-full ml-2 text-center transition-all duration-200 md:ml-4"
             :class="{ 'font-bold border-b-2 border-green': item.selected }"
             v-for="item in menuItems"
             :key="item.id"
@@ -60,13 +61,7 @@ const menuItems = ref([
   {
     id: 4,
     to: "#study",
-    label: "Estudios",
-    selected: false,
-  },
-  {
-    id: 5,
-    to: "#stack",
-    label: "Habilidades",
+    label: "Estudios y habilidades",
     selected: false,
   },
 ]);
@@ -79,6 +74,7 @@ const goToSection = (section) => {
   scrollToSection(section.to.replace("#", ""));
   menuOpen.value = false;
 };
+
 watch(menuOpen, (val) => {
   document.body.style.overflow = val ? "hidden" : "";
   if (val) {
@@ -135,20 +131,22 @@ onUnmounted(() => {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.slide-fade-enter-active {
-  transition: all 0.4s ease-out;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.4s cubic-bezier(1, 0.5, 0.8, 1);
-  height: 100vh;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateY(-20px);
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
-  height: 0px;
+}
+
+.menu-mobile {
+  backdrop-filter: blur(4px) saturate(140%);
+  -webkit-backdrop-filter: blur(4px) saturate(140%);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 </style>
 

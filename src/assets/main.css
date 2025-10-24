@@ -1,10 +1,18 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Quicksand";
+  src: url("./fonts/quicksand/Quicksand.ttf") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
+  --font-quicksand: "Quicksand", sans-serif;
   --color-white: #fff;
-  --color-black: #000;
+  --color-black: oklch(37.3% 0.034 259.733);
   --color-green: #6ee7b7;
-  --color-light: #f9f9f9;
+  /* --color-light: #f9f9f9; */
 }
 
 @layer utilities {
@@ -18,7 +26,7 @@
 }
 
 body {
-  font-family: "Chakra Petch", sans-serif;
+  font-family: var(--font-quicksand), sans-serif;
 }
 
 /** TODO: ELIMINAR LO QUE NO SE NECESITE */

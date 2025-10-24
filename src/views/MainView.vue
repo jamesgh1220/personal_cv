@@ -1,11 +1,19 @@
 <template>
-  <side-menu />
-  <hero-page />
+  <div class="min-h-screen flex flex-col bg-white dark:bg-black">
+    <HeaderComponent />
+    <main class="flex-1 px-8 py-5">
+      <hero-page />
+    </main>
+    <footer class="bg-gray-800 text-white text-center p-3 mt-auto">
+      <p>© 2025 Mi Aplicación</p>
+    </footer>
+  </div>
 </template>
 
 <script setup>
-import SideMenu from "@/components/commons/SideMenu.vue";
+import HeaderComponent from "@/components/HeaderComponent.vue";
 import HeroPage from "@/components/hero/HeroPage.vue";
+
 </script>
 
 <!-- <template>

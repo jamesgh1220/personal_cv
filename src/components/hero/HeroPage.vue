@@ -1,4 +1,32 @@
 <template>
+    <!-- CONTENIDO PRINCIPAL -->
+    <div>
+      <h2 class="text-xl font-semibold mb-4">Contenido principal</h2>
+      <p>
+        Aquí va el contenido de tu aplicación. En pantallas grandes puedes añadir una barra lateral fija.
+      </p>
+    </div>
+
+</template>
+
+<script setup>
+</script>
+
+<style scoped>
+/* Transición para el menú lateral */
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-enter-from {
+  transform: translateX(-100%);
+}
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+</style>
+
+<!-- <template>
   <div class="relative">
     <section
       id="hero"
@@ -24,15 +52,15 @@
           <social-component />
         </div>
         <div class="lg:flex lg:w-full lg:justify-center lg:items-center lg:gap-4 lg:px-4 xl:gap-6">
-          <!-- <button-component
+          <button-component
             class="hidden lg:flex"
             :label="'Descargar HV'"
             :icon="ArrowDownToLine"
             @click="downloadCv"
-          /> -->
+          />
           <button-black
             class="mx-auto lg:mx-0"
-            :label="'Mas sobre mi'"
+            :label="'Más sobre mi'"
             :icon="BookOpen"
             @click="scrollToSection('projects')"
           />
@@ -66,4 +94,4 @@ onMounted(async () => {
   pointEntrance();
   await splitText();
 });
-</script>
+</script> -->
