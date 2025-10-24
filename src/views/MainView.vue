@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white dark:bg-black">
     <HeaderComponent />
-    <main class="flex-1 px-8 py-5">
+    <main class="flex-1 px-4">
       <hero-page />
     </main>
-    <footer class="bg-gray-800 text-white text-center p-3 mt-auto">
+    <!-- <footer class="bg-gray-800 text-white text-center p-3 mt-auto">
       <p>© 2025 Mi Aplicación</p>
-    </footer>
+    </footer> -->
   </div>
 </template>
 

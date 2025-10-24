@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Quicksand";
-  src: url("./fonts/quicksand/Quicksand.ttf") format("woff2");
+  src: url("./fonts/Quicksand.ttf") format("woff2");
   font-style: normal;
   font-display: swap;
 }
@@ -10,18 +10,22 @@
 @theme {
   --font-quicksand: "Quicksand", sans-serif;
   --color-white: #fff;
-  --color-black: oklch(37.3% 0.034 259.733);
+  --color-black: oklch(14.1% 0.005 285.823);
   --color-green: #6ee7b7;
-  /* --color-light: #f9f9f9; */
+  --color-light: oklch(70.4% 0.04 256.788);
 }
 
 @layer utilities {
+  .text-hero {
+    @apply text-5xl md:text-7xl font-bold;
+  }
+
   .text-title {
-    /* @apply; */
+    @apply text-2xl md:text-3xl font-semibold;
   }
 
   .full-h-menu-mobile {
-    @apply h-[calc(100vh-4rem)] mt-16;
+    @apply h-[calc(100vh-4rem)];
   }
 }
 

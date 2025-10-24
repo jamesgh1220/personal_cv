@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import ButtonComponent from "@/components/commons/ButtonBlack.vue";
+import ButtonComponent from "@/components/commons/ButtonComponent.vue";
 import { ArrowDownToLine } from "lucide-vue-next";
 
 const scrollToSection = defineModel();
