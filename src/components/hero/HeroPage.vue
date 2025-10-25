@@ -1,30 +1,28 @@
 <template>
-    <!-- CONTENIDO PRINCIPAL -->
-    <section class="full-h-menu-mobile flex flex-col gap-8 justify-center">
-      <div class="space-y-4">
-        <h1 class="text-hero">John James Gallego Hernandez</h1>
-        <p class="text-title">Desarrollador de software</p>
-        <p class="text-light">Desarrollador fullstack con 3 años de experiencia creando aplicaciones digitales
-          funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
-          transformación de ideas complejas en interfaces claras.
-        </p>
-      </div>
-      <div class="flex gap-4">
-        <button-component
-          class="bg-black text-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
-          :label="'Ver proyectos'"
-          :icon="ArrowRight"
-          @click="downloadCv"
-        />
-        <button-component
-          class="bg-white text-black ring-1 ring-black ring-inset hover:bg-black hover:text-white active:bg-white active:text-black active:ring-black"
-          :label="'Descargar HV'"
-          :icon="ArrowDownToLine"
-          @click="downloadCv"
-        />
-      </div>
-    </section>
-
+  <section class="full-h-menu-mobile flex flex-col gap-8 justify-center">
+    <div class="space-y-4">
+      <h1 class="text-hero">John James Gallego Hernandez</h1>
+      <p class="text-subtitle">Desarrollador de software</p>
+      <p class="text-light">Desarrollador fullstack con 3 años de experiencia creando aplicaciones digitales
+        funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
+        transformación de ideas complejas en interfaces claras.
+      </p>
+    </div>
+    <div class="flex gap-4">
+      <button-component
+        class="bg-black text-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
+        :label="'Ver proyectos'"
+        :icon="ArrowRight"
+        @click="downloadCv"
+      />
+      <button-component
+        class="bg-white text-black ring-1 ring-black ring-inset hover:bg-black hover:text-white active:bg-white active:text-black active:ring-black"
+        :label="'Descargar HV'"
+        :icon="ArrowDownToLine"
+        @click="downloadCv"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup>
