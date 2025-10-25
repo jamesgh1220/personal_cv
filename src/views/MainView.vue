@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white dark:bg-black">
     <HeaderComponent />
-    <main class="flex-1 px-6">
+    <main class="flex-1 px-6 bg-gradient-to-br from-white/20 via-background to-slate-300/20 lg:px-32">
       <HeroPage />
       <AboutComponent />
       <HabilitiesComponent />
