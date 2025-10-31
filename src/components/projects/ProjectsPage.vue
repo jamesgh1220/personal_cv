@@ -6,7 +6,7 @@
         <div class="min-h-screen px-4">
           <div class="flex flex-col z-1 h-full lg:flex-row">
             <left-content v-model:active-scroll="activeProject" v-model:active-mouse="mouseActiveProject" />
-            <div class="w-full lg:w-2/3 lg:flex lg:flex-col lg:justify-evenly lg:mt-32">
+            <div class="w-full lg:w-2/3 lg:flex lg:flex-col lg:justify-evenly">
               <template :key="index" v-for="(project, index) in PROJECTS">
                 <div :ref="(el) => (projectsRef[index] = el)" @mouseover="handleActiveProjectMouse(project)">
                   <project-content :project="project" />

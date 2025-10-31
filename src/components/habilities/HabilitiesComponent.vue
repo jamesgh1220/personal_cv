@@ -1,7 +1,7 @@
 <template>
   <section class="py-20">
     <TitleSection title="Habilidades" />
-    <ul class="py-14 space-y-10 lg:grid lg:grid-cols-2 lg:place-items-center lg:space-y-0 lg:gap-10 lg:pb-0">
+    <ul class="pt-14 space-y-10 lg:grid lg:grid-cols-2 lg:place-items-center lg:space-y-0 lg:gap-10 lg:pb-0">
       <li >
         <div class="flex items-center px-4 py-3 rounded-2xl mx-auto gap-3 shadow-lg w-fit lg:mx-0">
           <CodeXml class="size-6 text-green" />
