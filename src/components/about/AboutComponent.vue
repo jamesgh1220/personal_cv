@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20">
+  <section id="about" class="py-20">
     <TitleSection title="Sobre mí" />
     <section class="lg:grid lg:grid-cols-2 lg:place-items-center">
       <div class="py-8 space-y-6 text-body dark:text-light">

@@ -1,5 +1,5 @@
 <template>
-  <section class="full-h-menu-mobile grid lg:grid-cols-2 lg:place-items-center lg:gap-12">
+  <section id="hero" class="full-h-menu-mobile grid lg:grid-cols-2 lg:place-items-center lg:gap-12">
     <div class="flex flex-col gap-8 justify-center">
       <div class="space-y-4">
         <h1 class="text-hero dark:text-white">John James Gallego Hernandez</h1>
@@ -11,13 +11,13 @@
       </div>
       <div class="flex flex-col gap-4 lg:flex-row">
         <button-component
-          class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white  hover:!ring-black hover:text-black active:bg-black active:text-white active:ring-white"
+          class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white dark:bg-white dark:hover:bg-black dark:hover:text-white dark:text-black hover:text-black active:bg-black active:text-white active:ring-white"
           :label="'Ver proyectos'"
           :icon="ArrowRight"
           @click="() => goToSection({ to: '#projects' })"
         />
         <button-component
-          class="bg-white w-full text-black ring-1 ring-black ring-inset hover:bg-black hover:ring-white hover:text-white active:bg-white active:text-black active:ring-black"
+          class="bg-white w-full text-black ring-1 ring-black ring-inset hover:bg-black dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black dark:ring-white hover:ring-white hover:text-white active:bg-white active:text-black active:ring-black"
           :label="'Descargar HV'"
           :icon="ArrowDownToLine"
           @click="downloadCv"

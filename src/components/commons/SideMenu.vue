@@ -3,7 +3,7 @@
     <div ref="buttonRef">
       <div class="hamburgers">
         <label class="hamburger z-100">
-          <input type="checkbox" v-model="menuOpen" />
+          <input id="burguer" name="burguer" type="checkbox" v-model="menuOpen" />
           <span class="bar bg-black dark:bg-white"></span>
           <span class="bar bg-black dark:bg-white"></span>
           <span class="bar bg-black dark:bg-white"></span>
@@ -75,10 +75,11 @@ function toggleTheme() {
 }
 
 const menuItems = ref([
-  { id: 1, to: "#hero", label: "Sobre mi" },
-  { id: 2, to: "#projects", label: "Proyectos" },
-  { id: 3, to: "#worked", label: "Trabajos" },
-  { id: 4, to: "#study", label: "Estudios y habilidades" },
+  { id: 1, to: "#hero", label: "Inicio" },
+  { id: 2, to: "#about", label: "Sobre mi" },
+  { id: 3, to: "#habilities", label: "Habilidades" },
+  { id: 4, to: "#projects", label: "Proyectos" },
+  { id: 5, to: "#contact", label: "Contacto" },
 ]);
 
 const goToSection = (section) => {

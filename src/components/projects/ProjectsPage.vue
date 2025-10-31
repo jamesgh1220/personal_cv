@@ -2,7 +2,7 @@
   <div id="projects" class="flex justify-center items-center w-full py-20">
     <div class="relative w-full h-full">
       <TitleSection title="Projectos" />
-      <section class="py-14">
+      <section class="pt-14">
         <div class="min-h-screen px-4">
           <div class="flex flex-col z-1 h-full lg:flex-row">
             <left-content v-model:active-scroll="activeProject" v-model:active-mouse="mouseActiveProject" />

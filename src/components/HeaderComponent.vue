@@ -29,11 +29,11 @@
         [&>li:hover::before]:w-full
       "
     >
-        <li>Inicio</li>
-        <li>Sobre mi</li>
-        <li>Proyectos</li>
-        <li>Habilidades</li>
-        <li>Contacto</li>
+        <li @click="goToSection({ to: '#hero' })">Inicio</li>
+        <li @click="goToSection({ to: '#about' })">Sobre mi</li>
+        <li @click="goToSection({ to: '#projects' })">Proyectos</li>
+        <li @click="goToSection({ to: '#habilities' })">Habilidades</li>
+        <li @click="goToSection({ to: '#contact' })">Contacto</li>
       </ul>
       <svg @click="toggleTheme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun cursor-pointer transition-all duration-200 hover:text-green hover:scale-110 dark:text-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
     </div>
@@ -42,11 +42,17 @@
 
 <script setup>
 import SideMenu from "@/components/commons/SideMenu.vue";
+import { animationsGsap } from "@/helpers/gsap";
 
 const theme = defineModel();
+const { scrollToSection } = animationsGsap();
 const logo = `<James = () => { code } />`;
 
 function toggleTheme() {
   theme.value = theme.value === "dark" ? "light" : "dark";
 }
+
+const goToSection = (section) => {
+  scrollToSection(section.to.replace("#", ""));
+};
 </script>

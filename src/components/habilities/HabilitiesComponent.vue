@@ -1,5 +1,5 @@
 <template>
-  <section class="py-20">
+  <section id="habilities" class="py-20">
     <TitleSection title="Habilidades" />
     <ul class="pt-14 space-y-10 lg:grid lg:grid-cols-2 lg:place-items-center lg:space-y-0 lg:gap-10 lg:pb-0">
       <li class="lg:w-80">

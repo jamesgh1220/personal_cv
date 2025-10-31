@@ -18,6 +18,20 @@
       <QualitiesComponent />
       <HabilitiesComponent />
       <ProjectsPage />
+      <ContactComponent />
+      <div class="lg:flex lg:justify-evenly lg:gap-20 lg:border-t lg:border-light/30">
+        <div class="mt-20">
+          <p class="relative text-green text-subtitle"># <span class="text-black dark:text-white">Disponibilidad</span></p>
+          <p class="mt-6 text-light text-body">Actualmente disponible para proyectos freelance y oportunidades de colaboración.</p>
+          <div class="flex items-center gap-x-2 mt-6">
+            <div class="relative size-3 bg-green rounded-full">
+              <div class="absolute inset-0 size-3 animate-ping bg-green rounded-full"></div>
+            </div>
+            <p class="text-body text-green font-semibold">Disponible ahora</p>
+          </div>
+        </div>
+        <FooterComponent />
+      </div>
     </main>
     <!-- <footer class="bg-gray-800 text-white text-center p-3 mt-auto">
       <p>© 2025 Mi Aplicación</p>
@@ -36,6 +50,8 @@ const AboutComponent = defineAsyncComponent(() => import('@/components/about/Abo
 const HabilitiesComponent = defineAsyncComponent(() => import('@/components/habilities/HabilitiesComponent.vue'));
 const QualitiesComponent = defineAsyncComponent(() => import('@/components/qualities/QualitiesComponent.vue'));
 const ProjectsPage = defineAsyncComponent(() => import('@/components/projects/ProjectsPage.vue'));
+const ContactComponent = defineAsyncComponent(() => import('@/components/contact/ContactComponent.vue'));
+const FooterComponent = defineAsyncComponent(() => import('@/components/footer/FooterComponent.vue'));
 
 const showTitle = ref(true);
 const activeClass = ref(false);
