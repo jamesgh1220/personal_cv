@@ -11,7 +11,7 @@
       </div>
       <div class="flex flex-col gap-4 lg:flex-row">
         <button-component
-          class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
+          class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white  hover:!ring-black hover:text-black active:bg-black active:text-white active:ring-white"
           :label="'Ver proyectos'"
           :icon="ArrowRight"
           @click="() => goToSection({ to: '#projects' })"

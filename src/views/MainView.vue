@@ -4,9 +4,9 @@
       class="fadeOut font-bold text-9xl text-green relative"
       @animationend="showTitle = false"
     >
-      {{ animatedNumber }}%
+      {{ animatedNumber }}<span class="text-6xl">%</span>
       <span
-        class="absolute right-5 bottom-9 bg-black dark:bg-white w-2 h-2 opacity-0 rounded-full zoom-dot"
+        class="absolute right-2 bottom-6 bg-black dark:bg-white w-2 h-2 opacity-0 rounded-full zoom-dot"
       ></span>
     </h1>
   </div>
@@ -112,15 +112,14 @@ onUnmounted(() => {
 @keyframes zoomInOut {
   0% {
     opacity: 1;
-    transform: scale(0);
   }
   80% {
     opacity: 1;
-    transform: scale(200);
+    transform: scale(400);
   }
   100% {
     opacity: 0;
-    transform: scale(400);
+    transform: scale(600);
   }
 }
 
