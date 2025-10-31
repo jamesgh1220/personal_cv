@@ -4,22 +4,22 @@
       <div class="hamburgers">
         <label class="hamburger z-20">
           <input type="checkbox" v-model="menuOpen" />
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar bg-black dark:bg-white"></span>
+          <span class="bar bg-black dark:bg-white"></span>
+          <span class="bar bg-black dark:bg-white"></span>
         </label>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    <svg @click="toggleTheme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun transition-all duration-400 dark:stroke-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
   </div>
   <Transition name="fade">
     <div v-if="menuOpen" class="text-white menu-mobile h-screen w-full fixed left-0 top-0 !z-10">
       <div class="full-h-menu-mobile">
         <div
-          class="flex flex-col justify-center items-center gap-8 pt-8 text-black font-medium text-3xl"
+          class="flex flex-col justify-center items-center gap-8 pt-20 text-black font-medium text-3xl"
         >
           <p
-            class="max-w-44 h-full ml-2 text-center transition-all duration-200 md:ml-4"
+            class="max-w-44 h-full ml-2 text-center transition-all duration-200 md:ml-4 dark:text-white"
             :class="{ 'font-bold border-b-2 border-green': item.selected }"
             v-for="item in menuItems"
             :key="item.id"
@@ -34,10 +34,38 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted } from "vue";
+import { ref, watch, onMounted, onUnmounted } from "vue";
 import { animationsGsap } from "@/helpers/gsap";
 
-const { splitText, scrollToSection } = animationsGsap();
+const theme = ref('light');
+
+function toggleTheme() {
+  theme.value = theme.value === 'dark' ? 'light' : 'dark';
+}
+
+function applyTheme(value) {
+  document.documentElement.classList.toggle('dark', value === 'dark');
+}
+
+watch(theme, (newTheme) => {
+  localStorage.setItem('theme', newTheme);
+  applyTheme(newTheme);
+})
+
+onMounted(() => {
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme) {
+    theme.value = savedTheme;
+  } else {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme.value = prefersDark ? 'dark' : 'light';
+  }
+
+  applyTheme(theme.value);
+})
+
+const { scrollToSection } = animationsGsap();
 const menuOpen = ref(false);
 const menuItems = ref([
   {
@@ -75,13 +103,6 @@ const goToSection = (section) => {
   menuOpen.value = false;
 };
 
-watch(menuOpen, (val) => {
-  document.body.style.overflow = val ? "hidden" : "";
-  if (val) {
-    splitText();
-  }
-});
-
 onUnmounted(() => {
   document.body.style.overflow = "";
 });
@@ -116,7 +137,6 @@ onUnmounted(() => {
   margin: 6px auto;
   border-radius: 40px;
   transition: all 0.3s cubic-bezier(0.37, -1.11, 0.79, 2.02);
-  background-color: #404040;
 }
 
 .hamburger input:checked ~ .bar:nth-child(2) {

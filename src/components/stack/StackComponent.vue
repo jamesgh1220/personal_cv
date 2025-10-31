@@ -1,6 +1,6 @@
 <template>
   <div id="stack">
-    <p class="relative text-green text-subtitle lg:mt-20"># <span class="text-black">Tecnologías principales</span></p>
+    <p class="relative text-green text-subtitle lg:mt-20"># <span class="text-black dark:text-white">Tecnologías principales</span></p>
     <div class="py-10">
       <div class="grid grid-cols-2 sm:grid-cols-4 place-items-center gap-3 mb-8 lg:grid-cols-2">
         <div
@@ -14,7 +14,7 @@
               :src="`https://cdn.simpleicons.org/${stack.icon}`"
               :alt="`Stack ${stack.text}`"
             />
-            <p class="text-dark font-semibold">{{ stack.text }}</p>
+            <p class="text-dark font-semibold dark:text-white">{{ stack.text }}</p>
           </div>
         </div>
       </div>

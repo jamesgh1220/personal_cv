@@ -2,7 +2,7 @@
   <section class="py-20">
     <TitleSection title="Sobre mí" />
     <section class="lg:grid lg:grid-cols-2 lg:place-items-center">
-      <div class="py-8 space-y-6 text-body">
+      <div class="py-8 space-y-6 text-body dark:text-light">
         <p>
           Soy un desarrollador de software con más de 5 años de experiencia creando aplicaciones web modernas y escalables. Mi pasión por la tecnología comenzó cuando descubrí el poder de transformar ideas en realidades digitales.</p>
         <p>

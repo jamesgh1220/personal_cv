@@ -2,8 +2,8 @@
   <section class="full-h-menu-mobile grid lg:grid-cols-2 lg:place-items-center lg:gap-12">
     <div class="flex flex-col gap-8 justify-center">
       <div class="space-y-4">
-        <h1 class="text-hero">John James Gallego Hernandez</h1>
-        <p class="text-subtitle">Desarrollador de software</p>
+        <h1 class="text-hero dark:text-white">John James Gallego Hernandez</h1>
+        <p class="text-subtitle dark:text-white">Desarrollador de software</p>
         <p class="text-light">Desarrollador fullstack con 3 años de experiencia creando aplicaciones digitales
           funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
           transformación de ideas complejas en interfaces claras.
@@ -11,7 +11,7 @@
       </div>
       <div class="flex flex-col gap-4 lg:flex-row">
         <button-component
-          class="bg-black w-full text-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
+          class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
           :label="'Ver proyectos'"
           :icon="ArrowRight"
           @click="downloadCv"

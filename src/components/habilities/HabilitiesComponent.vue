@@ -2,12 +2,12 @@
   <section class="py-20">
     <TitleSection title="Habilidades" />
     <ul class="pt-14 space-y-10 lg:grid lg:grid-cols-2 lg:place-items-center lg:space-y-0 lg:gap-10 lg:pb-0">
-      <li >
+      <li class="lg:w-80">
         <div class="flex items-center px-4 py-3 rounded-2xl mx-auto gap-3 shadow-lg w-fit lg:mx-0">
           <CodeXml class="size-6 text-green" />
-          <span class="text-body font-bold">Frontend</span>
+          <span class="text-body font-bold dark:text-white">Frontend</span>
         </div>
-        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start">
+        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start dark:text-light">
           <badge-component
             class="custom-opacity"
             v-animate-on-scroll
@@ -35,12 +35,12 @@
           />
         </div>
       </li>
-      <li class="lg:h-72">
+      <li class="lg:h-72 lg:w-80">
         <div class="flex items-center px-4 py-3 rounded-2xl mx-auto gap-3 shadow-lg w-fit lg:mx-0">
           <CodeXml class="size-6 text-green" />
-          <span class="text-body font-bold">Backend</span>
+          <span class="text-body font-bold dark:text-white">Backend</span>
         </div>
-        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start">
+        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start dark:text-light">
           <badge-component
             class="custom-opacity"
             v-animate-on-scroll
@@ -63,12 +63,12 @@
           />
         </div>
       </li>
-      <li class="">
+      <li class="lg:w-80">
         <div class="flex items-center px-4 py-3 rounded-2xl mx-auto gap-3 shadow-lg w-fit lg:mx-0">
           <CodeXml class="size-6 text-green" />
-          <span class="text-body font-bold">Mobile</span>
+          <span class="text-body font-bold dark:text-white">Mobile</span>
         </div>
-        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start">
+        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start dark:text-light">
           <badge-component
             class="custom-opacity"
             v-animate-on-scroll
@@ -81,12 +81,12 @@
           />
         </div>
       </li>
-      <li class="">
+      <li class="lg:w-80">
         <div class="flex items-center px-4 py-3 rounded-2xl mx-auto gap-3 shadow-lg w-fit lg:mx-0">
           <CodeXml class="size-6 text-green" />
-          <span class="text-body font-bold">DevOps</span>
+          <span class="text-body font-bold dark:text-white">DevOps</span>
         </div>
-        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start">
+        <div class="grid grid-cols-2 place-items-center gap-4 mt-10 lg:place-items-start dark:text-light">
           <badge-component
             class="custom-opacity"
             v-animate-on-scroll
