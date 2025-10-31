@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-8 justify-center">
       <div class="space-y-4">
         <h1 class="text-hero dark:text-white">John James Gallego Hernandez</h1>
-        <p class="text-subtitle dark:text-white">Desarrollador de software</p>
+        <p class="text-subtitle text-green">Desarrollador de software</p>
         <p class="text-light">Desarrollador fullstack con 3 años de experiencia creando aplicaciones digitales
           funcionales, escalables e intuitivas. Especializado en desarrollo web, con enfoque en la
           transformación de ideas complejas en interfaces claras.
@@ -14,10 +14,10 @@
           class="bg-black w-full text-white ring-1 ring-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
           :label="'Ver proyectos'"
           :icon="ArrowRight"
-          @click="downloadCv"
+          @click="() => goToSection({ to: '#projects' })"
         />
         <button-component
-          class="bg-white w-full text-black ring-1 ring-black ring-inset hover:bg-black hover:text-white active:bg-white active:text-black active:ring-black"
+          class="bg-white w-full text-black ring-1 ring-black ring-inset hover:bg-black hover:ring-white hover:text-white active:bg-white active:text-black active:ring-black"
           :label="'Descargar HV'"
           :icon="ArrowDownToLine"
           @click="downloadCv"
@@ -33,7 +33,22 @@
 <script setup>
 import ButtonComponent from "@/components/commons/ButtonComponent.vue";
 import { ArrowDownToLine, ArrowRight } from "lucide-vue-next";
+import { animationsGsap } from "@/helpers/gsap";
 
+const { scrollToSection } = animationsGsap();
+
+const goToSection = (section) => {
+  scrollToSection(section.to.replace("#", ""));
+};
+
+const downloadCv = () => {
+  const link = document.createElement("a");
+  link.href = "/assets/hv/HVJJGH.pdf";
+  link.download = "JohnJamesGallegoHernandezHV.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 </script>
 
 <style scoped>

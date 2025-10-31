@@ -1,8 +1,8 @@
 <template>
   <div class="fadeInUp flex justify-between items-center gap-5 w-full lg:hidden">
-    <div class="">
+    <div ref="buttonRef">
       <div class="hamburgers">
-        <label class="hamburger z-20">
+        <label class="hamburger z-100">
           <input type="checkbox" v-model="menuOpen" />
           <span class="bar bg-black dark:bg-white"></span>
           <span class="bar bg-black dark:bg-white"></span>
@@ -10,20 +10,47 @@
         </label>
       </div>
     </div>
-    <svg @click="toggleTheme" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun-icon lucide-sun transition-all duration-400 dark:stroke-white"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+
+    <svg
+      @click="toggleTheme"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="lucide lucide-sun transition-all duration-400 dark:stroke-white"
+    >
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
+    </svg>
   </div>
+
   <Transition name="fade">
-    <div v-if="menuOpen" class="text-white menu-mobile h-screen w-full fixed left-0 top-0 !z-10">
+    <div
+      v-if="menuOpen"
+      class="text-white menu-mobile h-screen w-full fixed left-0 top-0 !z-10"
+    >
       <div class="full-h-menu-mobile">
         <div
+          ref="menuRef"
           class="flex flex-col justify-center items-center gap-8 pt-20 text-black font-medium text-3xl"
         >
           <p
-            class="max-w-44 h-full ml-2 text-center transition-all duration-200 md:ml-4 dark:text-white"
-            :class="{ 'font-bold border-b-2 border-green': item.selected }"
             v-for="item in menuItems"
             :key="item.id"
             @click="goToSection(item)"
+            class="max-w-44 h-full ml-2 text-center font-bold transition-all duration-200 md:ml-4 dark:text-white"
           >
             {{ item.label }}
           </p>
@@ -34,76 +61,53 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import { animationsGsap } from "@/helpers/gsap";
 
-const theme = ref('light');
-
-function toggleTheme() {
-  theme.value = theme.value === 'dark' ? 'light' : 'dark';
-}
-
-function applyTheme(value) {
-  document.documentElement.classList.toggle('dark', value === 'dark');
-}
-
-watch(theme, (newTheme) => {
-  localStorage.setItem('theme', newTheme);
-  applyTheme(newTheme);
-})
-
-onMounted(() => {
-  const savedTheme = localStorage.getItem('theme');
-
-  if (savedTheme) {
-    theme.value = savedTheme;
-  } else {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    theme.value = prefersDark ? 'dark' : 'light';
-  }
-
-  applyTheme(theme.value);
-})
-
+const theme = defineModel();
 const { scrollToSection } = animationsGsap();
 const menuOpen = ref(false);
+const menuRef = ref(null); // referencia al contenedor del menú
+const buttonRef = ref(null); // referencia al botón hamburguesa
+
+function toggleTheme() {
+  theme.value = theme.value === "dark" ? "light" : "dark";
+}
+
 const menuItems = ref([
-  {
-    id: 1,
-    to: "#hero",
-    label: "Sobre mi",
-    selected: true,
-  },
-  {
-    id: 2,
-    to: "#projects",
-    label: "Proyectos",
-    selected: false,
-  },
-  {
-    id: 3,
-    to: "#worked",
-    label: "Trabajos",
-    selected: false,
-  },
-  {
-    id: 4,
-    to: "#study",
-    label: "Estudios y habilidades",
-    selected: false,
-  },
+  { id: 1, to: "#hero", label: "Sobre mi" },
+  { id: 2, to: "#projects", label: "Proyectos" },
+  { id: 3, to: "#worked", label: "Trabajos" },
+  { id: 4, to: "#study", label: "Estudios y habilidades" },
 ]);
 
 const goToSection = (section) => {
-  menuItems.value.forEach((item) => {
-    item.selected = false;
-  });
-  section.selected = true;
   scrollToSection(section.to.replace("#", ""));
   menuOpen.value = false;
 };
 
+// 🔹 Detectar clics fuera del menú
+function handleClickOutside(event) {
+  const menuEl = menuRef.value;
+  const buttonEl = buttonRef.value;
+
+  // Si el menú está abierto y el clic fue fuera de él y del botón
+  if (
+    menuOpen.value &&
+    menuEl &&
+    !menuEl.contains(event.target) &&
+    !buttonEl.contains(event.target)
+  ) {
+    menuOpen.value = false;
+  }
+}
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
 onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
   document.body.style.overflow = "";
 });
 </script>
@@ -127,7 +131,7 @@ onUnmounted(() => {
   margin: 0;
   cursor: pointer;
   opacity: 0;
-  z-index: 2;
+  z-index: 200;
 }
 
 .bar {
@@ -162,10 +166,9 @@ onUnmounted(() => {
 }
 
 .menu-mobile {
-  backdrop-filter: blur(4px) saturate(140%);
+  backdrop-filter: blur(6px) saturate(140%);
   -webkit-backdrop-filter: blur(4px) saturate(140%);
   background-color: rgba(255, 255, 255, 0);
-  border-radius: 12px;
   border: 1px solid rgba(209, 213, 219, 0.3);
 }
 </style>

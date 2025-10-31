@@ -45,17 +45,17 @@ const PROJECTS = [
   },
   {
     id: 2,
+    name: 'QRStock: Sistema de Inventario Inteligente',
+    image: 'https://images.unsplash.com/photo-1558637845-c8b7ead71a3e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    description: 'App móvil de gestión de inventarios con Ionic + Angular. Genera y escanea códigos QR únicos por producto, almacenando datos localmente. Ideal como ejemplo de integración entre frontend híbrido y capacidades nativas.',
+    technologies: ['Ionic', 'Angular', 'TypeScript', 'Capacitor'],
+  },
+  {
+    id: 3,
     name: 'Login rrss y chat firebase',
     image: 'https://images.unsplash.com/photo-1594568284297-7c64464062b1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
     technologies: ['Vue', 'Firebase', 'Tailwind'],
-  },
-  {
-    id: 3,
-    name: 'todo react',
-    image: 'https://images.unsplash.com/photo-1558637845-c8b7ead71a3e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    description: 'Ver mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectosVer mas proyectos',
-    technologies: ['React', 'Tailwind'],
   },
   {
     id: 4,

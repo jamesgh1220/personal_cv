@@ -1,6 +1,6 @@
 <template>
   <header class="flex items-center justify-between text-black p-4 shadow-sm lg:px-32 lg:py-5">
-    <side-menu />
+    <side-menu v-model="theme" />
     <div class="hidden lg:flex lg:justify-between w-full gap-8">
       <h1 class="lg:text-lg lg:tracking-tight lg:font-extrabold lg:flex-1">{{ logo }}</h1>
       <ul
@@ -43,5 +43,6 @@
 <script setup>
 import SideMenu from "@/components/commons/SideMenu.vue";
 
+const theme = defineModel();
 const logo = `<James = () => { code } />`;
 </script>
