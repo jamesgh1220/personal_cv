@@ -1,10 +1,12 @@
 <template>
   <div class="min-h-screen flex flex-col bg-white dark:bg-black">
     <HeaderComponent />
-    <main class="flex-1 px-6 bg-gradient-to-br from-white/20 via-background to-slate-300/20 lg:px-32">
+    <main class="flex-1 px-6 bg-gradient-to-br from-white/20 via-background to-slate-300/20 lg:px-20 xl:px-32">
       <HeroPage />
       <AboutComponent />
+      <QualitiesComponent />
       <HabilitiesComponent />
+      <ProjectsPage />
     </main>
     <!-- <footer class="bg-gray-800 text-white text-center p-3 mt-auto">
       <p>© 2025 Mi Aplicación</p>
@@ -19,6 +21,8 @@ import HeroPage from "@/components/hero/HeroPage.vue";
 
 const AboutComponent = defineAsyncComponent(() => import('@/components/about/AboutComponent.vue'));
 const HabilitiesComponent = defineAsyncComponent(() => import('@/components/habilities/HabilitiesComponent.vue'));
+const QualitiesComponent = defineAsyncComponent(() => import('@/components/qualities/QualitiesComponent.vue'));
+const ProjectsPage = defineAsyncComponent(() => import('@/components/projects/ProjectsPage.vue'));
 </script>
 
 <!-- <template>

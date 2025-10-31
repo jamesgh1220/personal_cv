@@ -9,15 +9,15 @@
           transformación de ideas complejas en interfaces claras.
         </p>
       </div>
-      <div class="flex gap-4">
+      <div class="flex flex-col gap-4 lg:flex-row">
         <button-component
-          class="bg-black text-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
+          class="bg-black w-full text-white ring-inset hover:bg-white hover:text-black active:bg-black active:text-white active:ring-white"
           :label="'Ver proyectos'"
           :icon="ArrowRight"
           @click="downloadCv"
         />
         <button-component
-          class="bg-white text-black ring-1 ring-black ring-inset hover:bg-black hover:text-white active:bg-white active:text-black active:ring-black"
+          class="bg-white w-full text-black ring-1 ring-black ring-inset hover:bg-black hover:text-white active:bg-white active:text-black active:ring-black"
           :label="'Descargar HV'"
           :icon="ArrowDownToLine"
           @click="downloadCv"

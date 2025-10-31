@@ -1,17 +1,16 @@
 <template>
   <div id="stack">
-    <p class="relative text-green text-subtitle lg:hidden"># <span class="text-black">Tecnologías principales</span></p>
+    <p class="relative text-green text-subtitle lg:mt-20"># <span class="text-black">Tecnologías principales</span></p>
     <div class="py-10">
       <div class="grid grid-cols-2 sm:grid-cols-4 place-items-center gap-3 mb-8 lg:grid-cols-2">
         <div
-          class="bg-dark p-2 w-24 rounded-md custom-opacity"
-          v-animate-on-scroll
+          class="bg-dark p-2 w-24 rounded-md lg:w-40"
           v-for="stack in strongStackExperience"
           :key="stack.id"
         >
-          <div class="flex flex-col justify-center items-center gap-1">
+          <div class="flex flex-col justify-center items-center gap-1 lg:gap-4">
             <img
-              class="w-8"
+              class="w-8 lg:size-16"
               :src="`https://cdn.simpleicons.org/${stack.icon}`"
               :alt="`Stack ${stack.text}`"
             />
